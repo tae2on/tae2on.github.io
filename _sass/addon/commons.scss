@@ -815,68 +815,67 @@ $btn-mb: 0.5rem;
     }
   }
 
-  .sidebar-bottom {
-    padding-left: 2rem;
-    padding-right: 1rem;
-    margin-bottom: 1.5rem;
-
-    $btn-size: 1.75rem;
-
-    %button {
-      width: $btn-size;
-      height: $btn-size;
-      margin-bottom: $btn-mb; // multi line gap
-      border-radius: 50%;
-      color: var(--sidebar-btn-color);
-      background-color: var(--sidebar-btn-bg);
-      text-align: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      &:not(:focus-visible) {
-        box-shadow: var(--sidebar-border-color) 0 0 0 1px;
-      }
-
-      &:hover {
-        background-color: var(--sidebar-hover-bg);
-      }
+.sidebar-bottom {
+  padding-left: 2rem;
+  padding-right: 1rem;
+  margin-bottom: 1.5rem;
+  
+  $btn-size: 1.75rem;
+  
+  %button {
+    width: $btn-size;
+    height: $btn-size;
+    margin-bottom: $btn-mb;
+    border-radius: 0;  /* 둥근 모양 제거 */
+    color: var(--sidebar-btn-color);
+    background-color: transparent;  /* 배경색 제거 */
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    &:not(:focus-visible) {
+      box-shadow: none;  /* 필요시 그림자 제거 */
     }
-
-    a {
-      @extend %button;
-      @extend %sidebar-link-hover;
-      @extend %clickable-transition;
-
-      &:not(:last-child) {
-        margin-right: $sb-btn-gap;
-      }
+  
+    &:hover {
+      background-color: var(--sidebar-hover-bg);
     }
-
-    i {
-      line-height: $btn-size;
+  }
+  
+  a {
+    @extend %button;
+    @extend %sidebar-link-hover;
+    @extend %clickable-transition;
+  
+    &:not(:last-child) {
+      margin-right: $sb-btn-gap;
     }
-
-    #mode-toggle {
-      @extend %button;
-      @extend %sidebar-links;
-      @extend %sidebar-link-hover;
-    }
-
-    .icon-border {
-      @extend %no-cursor;
-      @include ml-mr(calc(($sb-btn-gap - $btn-border-width) / 2));
-
-      background-color: var(--sidebar-btn-color);
-      content: '';
-      width: $btn-border-width;
-      height: $btn-border-width;
-      border-radius: 50%;
-      margin-bottom: $btn-mb;
-    }
-  } /* .sidebar-bottom */
-} /* #sidebar */
-
+  }
+  
+  i {
+    line-height: $btn-size;
+  }
+  
+  #mode-toggle {
+    @extend %button;
+    @extend %sidebar-links;
+    @extend %sidebar-link-hover;
+  }
+  
+  .icon-border {
+    @extend %no-cursor;
+    @include ml-mr(calc(($sb-btn-gap - $btn-border-width) / 2));
+  
+    background-color: transparent;  /* 아이콘 경계 배경 제거 */
+    content: '';
+    width: $btn-border-width;
+    height: $btn-border-width;
+    border-radius: 0;  /* 경계선 둥근 모양 제거 */
+    margin-bottom: $btn-mb;
+  }
+}
+  
 @media (hover: hover) {
   #sidebar ul > li:last-child::after {
     transition: top 0.5s ease;
