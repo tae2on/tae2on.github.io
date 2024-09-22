@@ -869,8 +869,8 @@ $btn-mb: 0.5rem;
   
     background-color: transparent;  /* 아이콘 경계 배경 제거 */
     content: '';
-    width: $btn-border-width;
-    height: $btn-border-width;
+    width: 0;
+    height: 0;
     border-radius: 0;  /* 경계선 둥근 모양 제거 */
     margin-bottom: $btn-mb;
   }
