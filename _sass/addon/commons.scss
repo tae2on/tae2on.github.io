@@ -592,15 +592,6 @@ main {
   @extend %img-caption;
 }
 
-.btn-link {
-  background-color: transparent; /* 배경색 제거 */
-  border: none; /* 테두리 제거 */
-}
-
-.btn {
-  padding: 0; /* 패딩 제거 */
-}
-
 /* --- buttons --- */
 .btn-lang {
   border: 1px solid !important;
@@ -822,9 +813,7 @@ $btn-mb: 0.5rem;
         margin-top: 0.25rem;
       }
     }
-  }
-
-  .sidebar-bottom {
+  }.sidebar-bottom {
     padding-left: 2rem;
     padding-right: 1rem;
     margin-bottom: 1.5rem;
@@ -832,59 +821,50 @@ $btn-mb: 0.5rem;
     $btn-size: 1.75rem;
 
     %button {
-      width: $btn-size;
-      height: $btn-size;
-      margin-bottom: $btn-mb; // multi line gap
-      border-radius: 50%;
-      color: var(--sidebar-btn-color);
-      background-color: var(--sidebar-btn-bg);
-      text-align: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+        width: $btn-size;
+        height: $btn-size;
+        margin-bottom: $btn-mb; // multi line gap
+        color: var(--sidebar-btn-color);
+        background-color: var(--sidebar-btn-bg);
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-      &:not(:focus-visible) {
-        box-shadow: var(--sidebar-border-color) 0 0 0 1px;
-      }
+        &:not(:focus-visible) {
+            box-shadow: var(--sidebar-border-color) 0 0 0 1px;
+        }
 
-      &:hover {
-        background-color: var(--sidebar-hover-bg);
-      }
+        &:hover {
+            background-color: var(--sidebar-hover-bg);
+        }
     }
 
     a {
-      @extend %button;
-      @extend %sidebar-link-hover;
-      @extend %clickable-transition;
+        @extend %button;
+        @extend %sidebar-link-hover;
+        @extend %clickable-transition;
 
-      &:not(:last-child) {
-        margin-right: $sb-btn-gap;
-      }
+        &:not(:last-child) {
+            margin-right: $sb-btn-gap;
+        }
     }
 
     i {
-      line-height: $btn-size;
+        line-height: $btn-size;
     }
 
     #mode-toggle {
-      @extend %button;
-      @extend %sidebar-links;
-      @extend %sidebar-link-hover;
+        @extend %button;
+        @extend %sidebar-links;
+        @extend %sidebar-link-hover;
     }
 
+    // 이 부분에서 아이콘 경계 스타일을 제거합니다.
     .icon-border {
-      @extend %no-cursor;
-      @include ml-mr(calc(($sb-btn-gap - $btn-border-width) / 2));
-
-      background-color: var(--sidebar-btn-color);
-      content: '';
-      width: $btn-border-width;
-      height: $btn-border-width;
-      border-radius: 50%;
-      margin-bottom: $btn-mb;
+        display: none; // 또는 이 클래스를 제거해도 됩니다.
     }
-  } /* .sidebar-bottom */
-} /* #sidebar */
+}
 
 @media (hover: hover) {
   #sidebar ul > li:last-child::after {
