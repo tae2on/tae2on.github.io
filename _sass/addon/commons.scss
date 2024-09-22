@@ -815,7 +815,7 @@ $btn-mb: 0.5rem;
     }
   }
 
-.sidebar-bottom {
+  .sidebar-bottom {
     padding-left: 2rem;
     padding-right: 1rem;
     margin-bottom: 1.5rem;
@@ -867,16 +867,9 @@ $btn-mb: 0.5rem;
     }
 
     .icon-border {
-        @extend %no-cursor;
-        @include ml-mr(calc(($sb-btn-gap - $btn-border-width) / 2));
-
-        background-color: var(--sidebar-btn-color);
-        content: '';
-        width: $btn-border-width; // 이 값으로 크기 조정
-        height: $btn-border-width; // 이 값으로 크기 조정
-        border-radius: 50%; // 원형 유지
-        margin-bottom: $btn-mb;
+      display: none; // 아이콘 주위의 원형 경계 숨기기
     }
+  }
 }
 
 
