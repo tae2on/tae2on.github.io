@@ -815,7 +815,7 @@ $btn-mb: 0.5rem;
     }
   }
 
-  .sidebar-bottom {
+.sidebar-bottom {
     padding-left: 2rem;
     padding-right: 1rem;
     margin-bottom: 1.5rem;
@@ -823,65 +823,62 @@ $btn-mb: 0.5rem;
     $btn-size: 1.75rem;
 
     %button {
-      width: $btn-size;
-      height: $btn-size;
-      margin-bottom: $btn-mb; // multi line gap
-      border-radius: 50%;
-      color: var(--sidebar-btn-color);
-      background-color: var(--sidebar-btn-bg);
-      text-align: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+        // width: $btn-size;
+        // height: $btn-size;
+        margin-bottom: $btn-mb; // multi line gap
+        color: var(--sidebar-btn-color);
+        background-color: var(--sidebar-btn-bg);
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-      &:not(:focus-visible) {
-        box-shadow: var(--sidebar-border-color) 0 0 0 1px;
-      }
+        &:not(:focus-visible) {
+            box-shadow: var(--sidebar-border-color) 0 0 0 1px;
+        }
 
-      &:hover {
-        background-color: var(--sidebar-hover-bg);
-      }
+        &:hover {
+            background-color: var(--sidebar-hover-bg);
+        }
     }
 
     a {
-      @extend %button;
-      @extend %sidebar-link-hover;
-      @extend %clickable-transition;
+        @extend %button;
+        @extend %sidebar-link-hover;
+        @extend %clickable-transition;
 
-      &:not(:last-child) {
-        margin-right: $sb-btn-gap;
-      }
+        &:not(:last-child) {
+            margin-right: $sb-btn-gap;
+        }
 
-      // 추가된 코드: 아이콘 버튼 배경 및 테두리 제거
-      background: none; // 배경 제거
-      border: none; // 테두리 제거
-      border-radius: 0; // 둥글기 제거
-      
+        // 배경 및 테두리 제거
+        background: none; // 배경 제거
+        border: none; // 테두리 제거
     }
 
     i {
-      line-height: $btn-size;
+        line-height: $btn-size;
     }
 
     #mode-toggle {
-      @extend %button;
-      @extend %sidebar-links;
-      @extend %sidebar-link-hover;
+        @extend %button;
+        @extend %sidebar-links;
+        @extend %sidebar-link-hover;
     }
 
     .icon-border {
-      @extend %no-cursor;
-      @include ml-mr(calc(($sb-btn-gap - $btn-border-width) / 2));
+        @extend %no-cursor;
+        @include ml-mr(calc(($sb-btn-gap - $btn-border-width) / 2));
 
-      background-color: var(--sidebar-btn-color);
-      content: '';
-      width: $btn-border-width;
-      height: $btn-border-width;
-      border-radius: 50%;
-      margin-bottom: $btn-mb;
+        background-color: var(--sidebar-btn-color);
+        content: '';
+        width: $btn-border-width; // 이 값으로 크기 조정
+        height: $btn-border-width; // 이 값으로 크기 조정
+        border-radius: 50%; // 원형 유지
+        margin-bottom: $btn-mb;
     }
-  } /* .sidebar-bottom */
-} /* #sidebar */
+}
+
 
 @media (hover: hover) {
   #sidebar ul > li:last-child::after {
