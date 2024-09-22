@@ -828,7 +828,7 @@ $btn-mb: 0.5rem;
     margin-bottom: $btn-mb;
     border-radius: 0;  /* 둥근 모양 제거 */
     color: var(--sidebar-btn-color);
-    background-color: transparent;  /* 배경색 제거 */
+    background-color: none;  /* 배경색 제거 */
     text-align: center;
     display: flex;
     align-items: center;
@@ -868,6 +868,7 @@ $btn-mb: 0.5rem;
     @include ml-mr(calc(($sb-btn-gap - $btn-border-width) / 2));
   
     background-color: transparent;  /* 아이콘 경계 배경 제거 */
+    border: none;
     content: '';
     width: 0;
     height: 0;
