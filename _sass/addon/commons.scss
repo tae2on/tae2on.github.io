@@ -705,20 +705,15 @@ $btn-mb: 0.5rem;
     display: none;
   }
 
-  %sidebar-links {
-    color: rgb(206, 196, 196); /* 기본 글자색 지정 */
-    text-decoration: none; /* 링크 밑줄 제거, 필요시 추가 */
-  
-    // 호버 효과 추가
+  %sidebar-link-hover {
     &:hover {
-      color: rgb(102, 95, 90); /* 진한 색상으로 변경 (원하는 색으로 조정 가능) */
+      color: var(--sidebar-active-color);
     }
   }
-  
+
   a {
     @extend %sidebar-links;
   }
-  
 
   #avatar {
     display: block;
