@@ -843,7 +843,7 @@ $btn-mb: 0.5rem;
       justify-content: center;
 
       &:not(:focus-visible) {
-        box-shadow: var(--sidebar-border-color) 0 0 0 1px;
+        box-shadow: none;
       }
 
       &:hover {
