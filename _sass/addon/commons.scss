@@ -689,7 +689,11 @@ $btn-mb: 0.5rem;
   overflow-y: auto;
   width: $sidebar-width;
   z-index: 99;
-  background: var(--sidebar-bg);
+  /* 배경을 이미지로 변경 */
+  background: url('assets/img/favicons/background.jpg') no-repeat center center; 
+  background-size: cover; /* 이미지가 전체 사이드바를 덮도록 설정 */
+
+  // background: var(--sidebar-bg);
   border-right: 1px solid var(--sidebar-border-color);
 
   /* Hide scrollbar for IE, Edge and Firefox */
