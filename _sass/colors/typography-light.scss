@@ -2,14 +2,14 @@
  * The syntax light mode typography colors
  */
 
-@mixin light-scheme {
+ @mixin light-scheme {
   /* Framework color */
   --main-bg: white;
   --mask-bg: #c1c3c5;
   --main-border-color: #f3f3f3;
 
   /* Common color */
-  --text-color: rgb(206, 196, 196);
+  --text-color: #34343c;
   --text-muted-color: #757575;
   --text-muted-highlight-color: inherit;
   --heading-color: #2a2a2a;
@@ -41,10 +41,10 @@
   --site-title-color: rgb(113, 113, 113);
   --site-subtitle-color: #717171;
   --sidebar-bg: #f6f8fa;
-  --sidebar-border-color: transparent;
+  --sidebar-border-color: #efefef;
   --sidebar-muted-color: #545454;
-  --sidebar-active-color: rgb(206, 196, 196);
-  --sidebar-hover-bg: transparent;
+  --sidebar-active-color: #1d1d1d;
+  --sidebar-hover-bg: rgb(223, 233, 241, 0.64);
   --sidebar-btn-bg: transparent;
   --sidebar-btn-color: #8e8e8e;
   --avatar-border-color: white;
