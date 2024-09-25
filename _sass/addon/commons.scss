@@ -788,9 +788,10 @@ $btn-mb: 0.5rem;
         align-items: center;
         border-radius: 0.75rem;
         font-weight: 600;
+        color: rgba(255, 255, 255, 0.65);
 
         &:hover {
-          color: rgb(206, 196, 196);
+          color: white;
           background-color: transparent;
         }
 
