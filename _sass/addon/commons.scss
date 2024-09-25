@@ -757,13 +757,13 @@ $btn-mb: 0.5rem;
       font-weight: 900;
       font-size: 1.5rem;
       letter-spacing: 0.5px;
-      color: rgba(255, 255, 255, 0.4); /* 거의 흰색 */
+      color: rgba(255, 255, 255, 0.65); /* 거의 흰색 */
     }
   }
 
   .site-subtitle {
     font-size: 95%;
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.65);
     margin-top: 0.25rem;
     word-spacing: 1px;
     -webkit-user-select: none;
@@ -790,7 +790,7 @@ $btn-mb: 0.5rem;
         font-weight: 600;
 
         &:hover {
-          background-color: rgba(254, 254, 254, 0.99);
+          background-color: var(--sidebar-hover-bg);
         }
 
         i {
@@ -807,8 +807,8 @@ $btn-mb: 0.5rem;
 
       &.active {
         .nav-link {
-          color: var(--sidebar-active-color);
-          background-color: var(--sidebar-hover-bg);
+          color:  rgb(206, 196, 196);         
+          background-color:  rgb(206, 196, 196);
 
           span {
             opacity: 1;
@@ -834,7 +834,7 @@ $btn-mb: 0.5rem;
       height: $btn-size;
       margin-bottom: $btn-mb; // multi line gap
       // border-radius: 50%;
-      color: white;
+      color: rgba(255, 255, 255, 0.65);
       background-color: transparent;
       border: none; 
       text-align: center;
