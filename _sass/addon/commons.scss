@@ -789,9 +789,12 @@ $btn-mb: 0.5rem;
         border-radius: 0.75rem;
         font-weight: 600;
         color: rgba(255, 255, 255, 0.65);
+        transition: font-size 0.3s ease, transform 0.3s ease; /* 부드러운 애니메이션 효과 */
 
         &:hover {
           color: white;
+          font-size: 100%; /* 호버 시 텍스트 크기 증가 */
+          transform: scale(1.05); /* 살짝 커지는 효과 */
           background-color: transparent;
         }
 
