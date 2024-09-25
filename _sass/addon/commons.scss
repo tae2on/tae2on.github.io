@@ -757,13 +757,13 @@ $btn-mb: 0.5rem;
       font-weight: 900;
       font-size: 1.5rem;
       letter-spacing: 0.5px;
-      color: rgba(254, 254, 254, 0.99); /* 거의 흰색 */
+      color: rgba(255, 255, 255, 0.4); /* 거의 흰색 */
     }
   }
 
   .site-subtitle {
     font-size: 95%;
-    color: rgba(254, 254, 254, 0.99);
+    color: rgba(255, 255, 255, 0.4);
     margin-top: 0.25rem;
     word-spacing: 1px;
     -webkit-user-select: none;
@@ -790,7 +790,7 @@ $btn-mb: 0.5rem;
         font-weight: 600;
 
         &:hover {
-          background-color: var(--sidebar-hover-bg);
+          background-color: rgba(254, 254, 254, 0.99);
         }
 
         i {
