@@ -1,9 +1,9 @@
 ---
 title: 파이썬 프로그래밍 | Python Programming
-author: tae2on
+author: 탱
 date: 2024-09-06 17:30:00 +/- 00:15
 categories: [Bootcamp, KT Aivle School]
-tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook]		# TAG는 반드시 소문자로 이루어져야함!
+tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook]	
 ---
 ## 자료형(list, dictionary, tuple)
 여러 값을 한꺼번에 저장하고 관리하기 위한 자료형
@@ -25,7 +25,7 @@ tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook]		# TAG는 반드시 
 | **종류** | True, False                                     | ==, !=, <, >, <=, >=                                  | and, or, not                           |
 
 ### 조건문
-if~ elif~ else: 위에서 아래로 조건을 확인
+**if~ elif~ else**: 위에서 아래로 조건을 확인
 
 ```yaml
 if (조건문1):
@@ -36,45 +36,27 @@ else:
   코드3
 ```
 
-while loop: 조건문이 False일때 혹은 break 만났을 때 종료 
-```yaml
-while 조건문:
-  코드
-  조건 변경문 
-```
 ### 반복문
 
-range(a, b, c): a부터 b전까지 c씩 증가시킨 값
-for loop: 순서대로 값을 출력하며 코드를 반복 수행하며 break를 만났을 때 종료 
+**while loop**: 조건문이 False일때 혹은 break 만났을 때 종료 
 
 ```yaml
 while 조건문:
   코드
   조건 변경문 
 ```
+**range(a, b, c)**: a부터 b전까지 c씩 증가시킨 값
+for loop: 순서대로 값을 출력하며 코드를 반복 수행하며 break를 만났을 때 종료 
+
 
 
 ## 함수 생성 및 활용
+코드의 재사용성, 구조화, 가독성을 높이기 위해 사용 
 
+```yaml
+def numbers(*num):
+  print(num)
 
-<!-- <div class="post-meta text-muted">
-  <span>
-    Posted <time>2023년 9월</time> · <time>16일</time>
-  </span>
-  
-  <span>
-    Updated <time>2024년 4월</time> <time>1일</time>
-  </span>
-  
-  <div class="d-flex justify-content-between">
-    <span> 
-      By <em> <a href="https://github.com/tae2on/">tae2on</a> </em>
-    </span>
-    
-    <span class="readtime" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-original-title="1506 words">
-      <em>8 min</em> read
-    </span>
-  </div>
-</div>
+numbers(1, 2, 3)
+```
 
-</div> -->
