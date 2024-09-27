@@ -4,12 +4,17 @@ date: 2024-09-06 17:30:00 +0900
 categories: [Bootcamp, KT Aivle School]
 tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook]	
 ---
+
+> 파이썬 프로그래밍 및 라이브러리에 대한 학습 내용 정리
+{: .prompt-info }
+
+
 ## 자료형(list, dictionary, tuple)
 여러 값을 한꺼번에 저장하고 관리하기 위한 자료형입니다.
 
 |      | 리스트 (List)                                | 딕셔너리 (Dictionary)                                         | 튜플 (Tuple)                             |
 |------|----------------------------------------------|------------------------------------------------------------|------------------------------------------|
-| 정의 | 순서가 있는 변경 가능한 데이터 구조               | 키와 값 쌍으로 이루어진 변경 가능한 데이터 구조                    | 변경 불가능한 데이터 구조                   |
+| 정의 | 순서가 있는 변경 가능한 구조               | 키와 값 쌍으로 이루어진 변경 가능한 구조                    | 변경 불가능한 구조                   |
 | 선언 | 대괄호([])로 선언 <br> list() 함수를 통해 선언       | 중괄호({})로 선언,  <br> dict() 함수를 통해 선언 <br> (중괄호만 사용할 경우 집합(set) 자료형으로 인식되므로 주의) | 소괄호(())로 선언 <br> tuple() 함수를 통해 선언  |
 | 예시 | list_a = [1, '5', 7, 9.3]                   | dic_a = {'name': 'mark', 'age': 23}                        | tup_a = (2, 3, '7')                     |
 
@@ -65,12 +70,15 @@ def 함수이름(매개변수1, 매개변수2):
 ```
 
 ## 데이터 분석/모델링을 위한 데이터 구조
-**CRISP-DM**: 비즈니스 이해 - 데이터 이해 - 데이터 준비 - 모델링 - 평가 - 배포
-<!--  그림 넣기   -->
-분석할 수 있는 데이터: 범주형(명목형, 순서형), 수치형(이산형, 연속형)<br>
-데이터 행: 분석단위, 데이터 건수, 결과(y, target, label)<<br>
-데이터 열: 정보, 변수, 요인(x, feature)<br>
-데이터 구조를 다루는 패키지: numpy(수치 연산), pandas(데이터 표현) 
+**CRISP-DM**: 비즈니스 이해 → 데이터 이해 → 데이터 준비 → 모델링 → 평가 → 배포
+
+![CRISP-DM](assets/img/CRISP-DM.png)
+_CRISP-DM (Cross Industry Standard Process for Data Mining)_
+
+- 분석할 수 있는 데이터: 범주형(명목형, 순서형), 수치형(이산형, 연속형)<br>
+ - 데이터 행: 분석단위, 데이터 건수, 결과(y, target, label)<br>
+- 데이터 열: 정보, 변수, 요인(x, feature)<br>
+- 데이터 구조를 다루는 패키지: numpy(수치 연산), pandas(데이터 표현) 
 
 ## numpy 기초
 수치 연산을 위해 배열(array)를 생성하고 다루는 패키지 
@@ -78,11 +86,11 @@ def 함수이름(매개변수1, 매개변수2):
 ```python
 import numpy as np
 ```
-Array 구조: Axis(배열의 각 축), Rank(축의 개수(차원)), Shape(축의 길이)<br>
-Array 조회: arr1[행 인덱스, 열 인덱스], arr1[행 인덱스][열 인덱스], arr1[시작: 끝]<br>
-Array 재구성: arr1.reshape(행, 열)<br>
-Array 집계: np.sum(), np.mean(), np.std()<br>
-조건에 따라 다른 값 지정: np.where(조건문, 참일 때 값, 거짓일 때 값)
+- Array 구조: Axis(배열의 각 축), Rank(축의 개수(차원)), Shape(축의 길이)<br>
+- Array 조회: arr1[행 인덱스, 열 인덱스], arr1[행 인덱스][열 인덱스], arr1[시작: 끝]<br>
+- Array 재구성: arr1.reshape(행, 열)<br>
+- Array 집계: np.sum(), np.mean(), np.std()<br>
+- 조건에 따라 다른 값 지정: np.where(조건문, 참일 때 값, 거짓일 때 값)
 
 ## pandas 기초
 데이터프레임을 통하여 데이터를 쉽게 처리하고 분석해주는 패키지 
@@ -90,11 +98,12 @@ Array 집계: np.sum(), np.mean(), np.std()<br>
 ```python
 import pandas as pd
 ```
-데이터프레임(Dataframe): 관계형 데이터베이스의 테이블 또는 엑셀 시트와 같은 형태 (2차원 구조)<br>
-시리즈(Series): 하나의 정보에 대한 데이터들의 집합으로 데이터에서 하나의 열을 떼어낸 것<br>
-데이터 프레임 정보 확인: df.info(), df.describe()<br>
-데이터 정렬: df.sort_index(ascending=False), df.sort_values(by='', ascending=False)<br>
-고유값 확인: df[''].unique(), df[''].value_counts()<br>
-데이터프레임 조회: df.loc[행 조건, 열 이름]<br>
-데이터프레임 집계: sum(), mean(), max(), min(), count()<br>
-groupby(): df.groupby( ‘집계기준변수’, as_index = )[‘집계대상변수’].집계함수
+- 데이터프레임(Dataframe): 관계형 데이터베이스의 테이블 또는 엑셀 시트와 같은 형태 (2차원 구조)<br>
+- 시리즈(Series): 하나의 정보에 대한 데이터들의 집합으로 데이터에서 하나의 열을 떼어낸 것<br>
+- 데이터 프레임 정보 확인: df.info(), df.describe()<br>
+- 데이터 정렬: df.sort_index(ascending=False), df.sort_values(by='', ascending=False)<br>
+- 고유값 확인: df[''].unique(), df[''].value_counts()<br>
+- 데이터프레임 조회: df.loc[행 조건, 열 이름]<br>
+- 데이터프레임 집계: sum(), mean(), max(), min(), count()<br>
+- groupby(): df.groupby( ‘집계기준변수’, as_index = )[‘집계대상변수’].집계함수
+
