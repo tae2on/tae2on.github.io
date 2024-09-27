@@ -18,6 +18,9 @@ tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook]
 | 선언 | 대괄호([])로 선언 <br> list() 함수를 통해 선언       | 중괄호({})로 선언,  <br> dict() 함수를 통해 선언 <br> (중괄호만 사용할 경우 집합(set) 자료형으로 인식되므로 주의) | 소괄호(())로 선언 <br> tuple() 함수를 통해 선언  |
 | 예시 | list_a = [1, '5', 7, 9.3]                   | dic_a = {'name': 'mark', 'age': 23}                        | tup_a = (2, 3, '7')                     |
 
+&nbsp;
+&nbsp;
+
 ## 흐름 제어(조건문과 반복문)
 
 ### 연산자
@@ -27,6 +30,8 @@ tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook]
 |------|-------------------------------------------------|-------------------------------------------------------|-----------------------------------------|
 | **정의** | 참(True) 또는 거짓(False) 값을 반환하는 연산자      | 두 값을 비교하여 그 결과를 참 또는 거짓으로 나타내는 연산자  | 하나 이상의 조건을 결합하여 참 또는 거짓을 반환하는 연산자 |
 | **종류** | True, False                                     | ==, !=, <, >, <=, >=                                  | and, or, not                           |
+
+&nbsp;
 
 ### 조건문
 **if~ elif~ else**: 위에서 아래로 조건을 확인합니다.
@@ -48,6 +53,8 @@ while 조건문:
   조건 변경문 
 ```
 
+&nbsp;
+
 ### 반복문
 
 **range(a, b, c)**: a부터 b전까지 c씩 증가시킨 값입니다. 
@@ -58,6 +65,8 @@ while 조건문:
 for i in range(5):
   print(i)
 ```
+&nbsp;
+&nbsp;
 
 ## 함수 생성 및 활용
 def 키워드를 사용하여 정의하며 필요에 따라 매개변수를 전달하고 값을 반환합니다. <br>
@@ -69,16 +78,22 @@ def 함수이름(매개변수1, 매개변수2):
     return 반환값
 ```
 
+&nbsp;
+&nbsp;
+
 ## 데이터 분석/모델링을 위한 데이터 구조
 **CRISP-DM**: 비즈니스 이해 → 데이터 이해 → 데이터 준비 → 모델링 → 평가 → 배포
 
-![CRISP-DM](assets/img/CRISP-DM.png)
+![CRISP-DM](https://raw.githubusercontent.com/tae2on/tae2on.github.io/main/assets/img/CRISP-DM.png)
 _CRISP-DM (Cross Industry Standard Process for Data Mining)_
 
 - 분석할 수 있는 데이터: 범주형(명목형, 순서형), 수치형(이산형, 연속형)<br>
  - 데이터 행: 분석단위, 데이터 건수, 결과(y, target, label)<br>
 - 데이터 열: 정보, 변수, 요인(x, feature)<br>
 - 데이터 구조를 다루는 패키지: numpy(수치 연산), pandas(데이터 표현) 
+
+&nbsp;
+&nbsp;
 
 ## numpy 기초
 수치 연산을 위해 배열(array)를 생성하고 다루는 패키지 
@@ -91,6 +106,9 @@ import numpy as np
 - Array 재구성: arr1.reshape(행, 열)<br>
 - Array 집계: np.sum(), np.mean(), np.std()<br>
 - 조건에 따라 다른 값 지정: np.where(조건문, 참일 때 값, 거짓일 때 값)
+
+&nbsp;
+&nbsp;
 
 ## pandas 기초
 데이터프레임을 통하여 데이터를 쉽게 처리하고 분석해주는 패키지 
