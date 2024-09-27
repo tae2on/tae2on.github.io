@@ -1,7 +1,5 @@
 ---
 title: 파이썬 프로그래밍 | Python Programming
-author:
-  name: 탱
 date: 2024-09-06 17:30:00 +0900
 categories: [Bootcamp, KT Aivle School]
 tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook]	
