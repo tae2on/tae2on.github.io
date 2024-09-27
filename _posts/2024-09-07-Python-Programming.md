@@ -84,8 +84,10 @@ def 함수이름(매개변수1, 매개변수2):
 ## 데이터 분석/모델링을 위한 데이터 구조
 **CRISP-DM**: 비즈니스 이해 → 데이터 이해 → 데이터 준비 → 모델링 → 평가 → 배포
 
-![CRISP-DM](https://raw.githubusercontent.com/tae2on/tae2on.github.io/main/assets/img/CRISP-DM.png)
-_CRISP-DM (Cross Industry Standard Process for Data Mining)_
+<img src="https://raw.githubusercontent.com/tae2on/tae2on.github.io/main/assets/img/CRISP-DM.png" alt="CRISP-DM" width="800" height="400" />
+<p style="text-align: center;">CRISP-DM (Cross Industry Standard Process for Data Mining)</p>
+
+
 
 - 분석할 수 있는 데이터: 범주형(명목형, 순서형), 수치형(이산형, 연속형)<br>
  - 데이터 행: 분석단위, 데이터 건수, 결과(y, target, label)<br>
