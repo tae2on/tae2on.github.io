@@ -117,9 +117,9 @@ comments:
   # Giscus options › https://giscus.app
   giscus:
     repo: tae2on/tae2on.github.io # <gh-username>/<repo>
-    repo_id: 860338772
+    repo_id: "R_kgDOM0e6VA"
     category: Comments
-    category_id: 42641999
+    category_id: "DIC_kwDOM0e6VM4CiqpP"
     mapping: pathname # optional, default to 'pathname'
     strict: # optional, default to '0'
     input_position: # optional, default to 'bottom'
