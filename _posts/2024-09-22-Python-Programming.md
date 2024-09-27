@@ -2,7 +2,7 @@
 title: 파이썬 프로그래밍 | Python Programming
 author:
   name: tae2on
-  link: https://github.com/univdev
+  url: https://github.com/univdev
 date: 2024-09-06 17:30:00 +0900
 lastmod: 2024-09-27 20:30:00 +0900 
 categories: [Bootcamp, KT Aivle School]
