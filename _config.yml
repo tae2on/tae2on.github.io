@@ -69,10 +69,6 @@ analytics:
   fathom:
     id: # fill in your Fathom Site ID
 
-author:
-  name: tae2on
-  url: https://github.com/tae2on
-
 # Page views settings
 pageviews:
   provider: # now only supports 'goatcounter'
@@ -193,6 +189,7 @@ defaults:
     values:
       layout: page
       permalink: /:title/
+      lastmod: true  # Enable 'last modified' date for all posts
 
 sass:
   style: compressed
