@@ -788,7 +788,7 @@ $btn-mb: 0.5rem;
         align-items: center;
         border-radius: 0.75rem;
         font-weight: 600;
-        color: rgb(206, 196, 196);
+        color: white;
         transition: font-size 0.3s ease, transform 0.3s ease; /* 부드러운 애니메이션 효과 */
 
         &:hover {
@@ -813,7 +813,7 @@ $btn-mb: 0.5rem;
 
       &.active {
         .nav-link {
-          color: rgb(206, 196, 196);
+          color: white;
           background-color: transparent;
 
           span {
