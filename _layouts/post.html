@@ -25,6 +25,14 @@ tail_includes:
         {% include datetime.html date=page.date tooltip=true lang=lang %}
       </span>
 
+      <!-- upload date -->
+      <span>
+        upload 
+        <strong>
+          {% include datetime.html date=page.upload tooltip=true lang=lang %}
+        </strong>
+      </span>
+
       <!-- lastmod date -->
       {% if page.last_modified_at and page.last_modified_at != page.date %}
         <span>
