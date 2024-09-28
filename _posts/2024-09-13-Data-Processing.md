@@ -8,7 +8,7 @@ tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook, Pandas]
 > KT 에이블스쿨 6기 데이터 처리에 진행한 강의 내용 정리글입니다. 
 {: .prompt-info }
 
-## 데이터프레임 변경 
+## **데이터프레임 변경** 
 - 열 이름 변경: `columns` 속성을 통해 모든 열 이름을 변경하거나 `rename()` 메소드를 통해 지정한 열 이름을 변경할 수 있습니다.
 - 열 추가: `insert()` 메소드를 사용하여 원하는 위치에 열을 추가할 수 있습니다.
 - 열 삭제: `drop()` 메소드를 사용하여 열으 삭제할 수 있습니다. (axis=0: 행 삭제, axis: 열 삭제)
@@ -23,10 +23,9 @@ tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook, Pandas]
 
 &nbsp;
 
-## 데이터프레임 결합 
+## **데이터프레임 결합** 
 ![join](https://github.com/user-attachments/assets/abcc9fdf-efb5-40d1-89c0-4e155c738b60)
 _merge(join)_
-
 
 - `pd.concat`: 인덱스, 열이름 기준으로 데이터프레임 구조에 맞게 합칩니다.
 - `pd.merge`: 특정 열의 값 기준으로 데이터 값 기준으로 합칩니다. 
@@ -40,7 +39,7 @@ _merge(join)_
 
 &nbsp;
 
-## 시계열 데이터 처리
+## **시계열 데이터 처리**
 시계열 데이터는 행과 행에 시간의 순서(흐름)가 있고 행과 행의 시간 간격이 동일한 데이터를 뜻합니다.
 <br>
 - 날짜 요소 뽑기: 날짜 타입의 변수로부터 날짜의 요소를 뽑아낼 수 있습니다. 
@@ -54,7 +53,7 @@ _merge(join)_
 
 &nbsp;
 
-## 데이터분석 방법론
+## **데이터분석 방법론**
 <img src="https://raw.githubusercontent.com/tae2on/tae2on.github.io/main/assets/img/CRISP-DM.png" alt="CRISP-DM" width="500" height="200" />
 <p style="text-align: center;">_CRISP-DM (Cross Industry Standard Process for Data Mining)_</p>
 
@@ -84,7 +83,7 @@ _merge(join)_
 
 &nbsp;
 
-## 시각화 라이브러리 
+## **시각화 라이브러리** 
 수 많은 데이터를 한 눈에 파악하는 방법으로 그래프와 통계량 두 가지 방법이 있습니다.
 - 목적:  비즈니스 인사이트를 파악하는 것입니다. 
 - 한계: 요약된 정보가 표현되므로 정보의 손실이 발생하고 요약하는 관점에 따라 해석의 결과가 달라질 수도 있습니다. 
@@ -106,7 +105,7 @@ import seaborn as sns
 
 &nbsp;
 
-## 단변량 분석 - 숫자형 
+## **단변량 분석 - 숫자형** 
 - 기초통계량: `df.describe()`을 통해 정보의 대표값 확인 가능 (mean, median, mode, 사분위수)
 - 도수분포표: 구간을 나누고 빈도수 계산
 
@@ -118,7 +117,7 @@ import seaborn as sns
 
 &nbsp;
 
-## 단변량 분석 - 범주형 
+## **단변량 분석 - 범주형** 
 - 범주별 빈도수: `df['column_name'].value_counts() `
 - 범주별 비율: `df['column_name'].value_counts(normalize = True)
 

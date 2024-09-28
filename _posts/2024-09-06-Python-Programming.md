@@ -9,7 +9,7 @@ tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook, Pandas]
 {: .prompt-info }
 
 
-## 자료형(list, dictionary, tuple)
+## **자료형(list, dictionary, tuple)**
 여러 값을 한꺼번에 저장하고 관리하기 위한 자료형입니다.
 
 |      | 리스트 (List)                                | 딕셔너리 (Dictionary)                                         | 튜플 (Tuple)                             |
@@ -19,11 +19,10 @@ tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook, Pandas]
 | 예시 | list_a = [1, '5', 7, 9.3]                   | dic_a = {'name': 'mark', 'age': 23}                        | tup_a = (2, 3, '7')                     |
 
 &nbsp;
-&nbsp;
 
-## 흐름 제어(조건문과 반복문)
+## **흐름 제어(조건문과 반복문)**
 
-### 연산자
+### **연산자**
 조건에 따라 실행 흐름을 제어하거나 반복하는 구문에서 사용하는 연산자입니다. 
 
 |      | **bool 연산자**                                 | **비교 연산자**                                        | **논리 연산자**                         |
@@ -33,7 +32,7 @@ tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook, Pandas]
 
 &nbsp;
 
-### 조건문
+### **조건문**
 **if~ elif~ else**: 위에서 아래로 조건을 확인합니다.
 
 ```python
@@ -55,7 +54,7 @@ while 조건문:
 
 &nbsp;
 
-### 반복문
+### **반복문**
 
 **range(a, b, c)**: a부터 b전까지 c씩 증가시킨 값입니다. 
 
@@ -66,9 +65,8 @@ for i in range(5):
   print(i)
 ```
 &nbsp;
-&nbsp;
 
-## 함수 생성 및 활용
+## **함수 생성 및 활용**
 def 키워드를 사용하여 정의하며 필요에 따라 매개변수를 전달하고 값을 반환합니다. <br>
 코드의 재사용성, 구조화, 가독성을 높이기 위해 사용합니다. 
 
@@ -79,9 +77,8 @@ def 함수이름(매개변수1, 매개변수2):
 ```
 
 &nbsp;
-&nbsp;
 
-## 데이터 분석/모델링을 위한 데이터 구조
+## **데이터 분석/모델링을 위한 데이터 구조**
 **CRISP-DM**: 비즈니스 이해 → 데이터 이해 → 데이터 준비 → 모델링 → 평가 → 배포
 
 <img src="https://raw.githubusercontent.com/tae2on/tae2on.github.io/main/assets/img/CRISP-DM.png" alt="CRISP-DM" width="500" height="200" />
@@ -93,9 +90,8 @@ def 함수이름(매개변수1, 매개변수2):
 - 데이터 구조를 다루는 패키지: numpy(수치 연산), pandas(데이터 표현) 
 
 &nbsp;
-&nbsp;
 
-## numpy 기초
+## **numpy 기초**
 수치 연산을 위해 배열(array)를 생성하고 다루는 패키지 
 
 ```python
@@ -108,9 +104,8 @@ import numpy as np
 - 조건에 따라 다른 값 지정: np.where(조건문, 참일 때 값, 거짓일 때 값)
 
 &nbsp;
-&nbsp;
 
-## pandas 기초
+## **pandas 기초**
 데이터프레임을 통하여 데이터를 쉽게 처리하고 분석해주는 패키지 
 
 ```python
