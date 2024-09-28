@@ -1,5 +1,5 @@
 ---
-title: "**데이터 처리 | Data Processing**"
+title: "<strong>데이터 처리 | Data Processing</strong>"
 date: 2024-09-13 20:30:00 +0900
 categories: [Bootcamp, KT Aivle School]
 tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook, Pandas]	
