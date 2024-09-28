@@ -1,11 +1,11 @@
 ---
-title: "데이터 처리 | Data Processing"
+title: "**데이터 처리 | Data Processing**"
 date: 2024-09-13 20:30:00 +0900
 categories: [Bootcamp, KT Aivle School]
 tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook, Pandas]	
 ---
 ---------------------------------------
-> KT 에이블스쿨 6기 데이터 처리에 진행한 강의 내용 정리글입니다. 
+> KT 에이블스쿨 6기 데이터 처리에 진행한 강의 내용 정리한 글입니다. 
 {: .prompt-info }
 
 ## **데이터프레임 변경** 
