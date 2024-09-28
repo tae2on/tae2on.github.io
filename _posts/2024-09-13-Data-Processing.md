@@ -5,7 +5,7 @@ categories: [Bootcamp, KT Aivle School]
 tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook, Pandas]	
 ---
 
-> KT 에이블스쿨 6기 데이터 처리에 진행한 강의 내용 정리 글입니다. 
+> KT 에이블스쿨 6기 데이터 처리에 진행한 강의 내용 정리글입니다. 
 {: .prompt-info }
 
 ## 데이터프레임 변경 
@@ -24,7 +24,8 @@ tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook, Pandas]
 &nbsp;
 
 ## 데이터프레임 결합 
-![0_4OB904fe6v_p_WS9](https://github.com/user-attachments/assets/caa7ef11-b87b-4877-86b5-4b6ad72a09eb)_merge(join)_
+![join](https://github.com/user-attachments/assets/abcc9fdf-efb5-40d1-89c0-4e155c738b60)
+_merge(join)_
 
 
 - `pd.concat`: 인덱스, 열이름 기준으로 데이터프레임 구조에 맞게 합칩니다.
@@ -54,7 +55,8 @@ tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook, Pandas]
 &nbsp;
 
 ## 데이터분석 방법론
-![images](https://github.com/user-attachments/assets/fd31bd44-e6de-4a4e-bfa1-b3e4a17a54f6)_CRISP-DM (Cross Industry Standard Process for Data Mining)_
+<img src="https://raw.githubusercontent.com/tae2on/tae2on.github.io/main/assets/img/CRISP-DM.png" alt="CRISP-DM" width="500" height="200" />
+<p style="text-align: center;">_CRISP-DM (Cross Industry Standard Process for Data Mining)_</p>
 
 - Business Understanding - 가설 수립
     - 귀무가설: 기존 연구 결과로 이어져 내려오는 정설

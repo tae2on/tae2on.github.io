@@ -5,7 +5,7 @@ categories: [Bootcamp, KT Aivle School]
 tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook, Pandas]	
 ---
 
-> KT 에이블스쿨 6기 파이썬 라이브러리 & 프로그래밍에 진행한 강의 내용 정리 글입니다. 
+> KT 에이블스쿨 6기 파이썬 라이브러리 & 프로그래밍에 진행한 강의 내용 정리글입니다. 
 {: .prompt-info }
 
 
