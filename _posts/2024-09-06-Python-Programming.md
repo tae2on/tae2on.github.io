@@ -1,10 +1,10 @@
 ---
-title: 파이썬 프로그래밍 | Python Programming
+title: "파이썬 프로그래밍 | Python Programming"
 date: 2024-09-06 20:30:00 +0900
 categories: [Bootcamp, KT Aivle School]
 tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook, Pandas]	
 ---
-
+-------------------------------
 > KT 에이블스쿨 6기 파이썬 라이브러리 & 프로그래밍에 진행한 강의 내용 정리글입니다. 
 {: .prompt-info }
 
