@@ -1,5 +1,5 @@
 ---
-title: "<strong>파이썬 프로그래밍 | Python Programming</strong>"
+title: "파이썬 프로그래밍 | Python Programming"
 date: 2024-09-06 20:30:00 +0900
 categories: [Bootcamp, KT Aivle School]
 tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook, Pandas, DataFrame]	
