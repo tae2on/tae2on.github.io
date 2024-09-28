@@ -120,7 +120,7 @@ import seaborn as sns
 
 ## **단변량 분석 - 범주형** 
 - 범주별 빈도수: `df['column_name'].value_counts() `
-- 범주별 비율: `df['column_name'].value_counts(normalize = True)
+- 범주별 비율: `df['column_name'].value_counts(normalize = True)`
 
 | **시각화**         | **설명**                                                      | **예시**                              |
 |------------------|-------------------------------------------------------------|---------------------------------------|
