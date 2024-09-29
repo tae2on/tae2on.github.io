@@ -1,9 +1,9 @@
 ---
-title: "파이썬 프로그래밍 | Python Programming"
+title: "데이터 처리 | Data Processing"
 date: 2024-09-28 21:30:00 +0900
 achieved: 2024-09-06 17:30:00 +0900
 categories: [Bootcamp, KT Aivle School]
-tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook, Pandas, DataFrame]	
+tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook, Pandas, DataFrame, Processing]
 ---
 -------------------------------
 > KT 에이블스쿨 6기 데이터 처리에 진행한 강의 내용 정리한 글입니다. 
