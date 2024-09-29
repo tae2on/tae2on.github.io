@@ -1,6 +1,6 @@
 ---
 title: "데이터 처리 | Data Processing"
-date: 2024-09-29 20:30:00 +0900
+date: 2024-09-28 21:30:00 +0900
 achieved: 2024-09-06 17:30:00 +0900
 categories: [Bootcamp, KT Aivle School]
 tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook, Pandas, DataFrame, Processing]
