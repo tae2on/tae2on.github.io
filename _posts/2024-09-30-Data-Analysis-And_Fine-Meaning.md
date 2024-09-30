@@ -42,7 +42,7 @@ tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook, Pandas, DataFrame, A
 ```python
 # Matplotlib
 plt.scatter(df['x_column'], df['y_column'])
-plt.scatter(‘x’, ‘y’, data = df) 
+plt.scatter('x', 'y', data = df) 
 # seaborn
 sns.scatterplot(x='x', y='y', data=df)
 # 산점도 한꺼번에 그리기 
