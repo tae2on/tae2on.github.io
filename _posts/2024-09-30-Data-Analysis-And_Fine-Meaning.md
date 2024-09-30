@@ -4,7 +4,7 @@ date: 2024-09-30 19:54:00 +0900
 achieved: 2024-09-13 17:30:00 +0900
 math: true
 categories: [Bootcamp, KT Aivle School]
-tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook, Pandas, DataFrame, Analysis]
+tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook, Pandas, Analysis]
 ---
 ---------- 	
 > KT 에이블스쿨 6기 데이터 분석 및 의미 찾기에 진행한 강의 내용 정리한 글입니다. 
