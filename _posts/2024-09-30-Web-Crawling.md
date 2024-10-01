@@ -43,6 +43,7 @@ tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook, Pandas, Web Crawling
 - HTML: 웹 페이지의 구조와 내용을 정의
 - CSS: 웹 페이지의 스타일 지정 (Bootstrap, Semantic UI, Materialize, Material Design Lite)
 - Javascript: 웹 페이지에 동적인 기능을 추가
+<br><br>
 **Server (Backend)**
 - Python (Django, Flask, FastAPI)
 - Java (Spring)
@@ -63,7 +64,7 @@ tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook, Pandas, Web Crawling
 - 정적 페이지 (Static Page): 웹 브라우져에 화면이 한번 뜨면 이벤트에 의한 화면의 변경이 없는 페이지 
 - 동적 페이지 (Dynamic Page): 웹 브라우져에 화면이 뜨고 이벤트가 발생하면 서버에서 데이터를 가져와 화면을 변경하는 페이지 
 
-## **웹 크롤링 방법 **
+## **웹 크롤링 방법**
 ### **Requests 이용**
 받아오는 문자열에 따라 두 가지 방법으로 구분
 - json 문자열로 받아서 파싱하는 방법: 주로 동적 페이지 크롤링할 때 사용
@@ -77,13 +78,13 @@ tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook, Pandas, Web Crawling
 ### **Headless**
 - 브라우져를 화면에 띄우지 않고 메모리상에서만 올려서 크롤링하는 방법
 
-## 웹 크롤링 절차
-### 동적  웹 클로링
+## **웹 크롤링 절차**
+### **동적 페이지**
 - URL → 웹 페이지 분석: 개발자 도구(`Fn + F12`)을 통한 HTML 구조 파악 
 - 서버에 데이터 요청: `request` 라이브러리를 통한 웹페이지 요청 후 response으로 `json(str)` 형식 데이터 수집 
 - 데이터 파싱: 수집된 `json` 데이터를 `json` 라이브러리로 파싱하고 `list`, `dict` 형태로 변환 후 `DataFrame` 저장
 
-### 정적  웹 클로링
+### **정적 페이지**
 - URL → 웹 페이지 분석: 개발자 도구(`Fn + F12`)을 통한 HTML 구조 파악 
 - 서버에 데이터 요청: `request` 라이브러리를 통한 웹페이지 요청 후 response으로 `html(str)` 형식 데이터 수집
 - 데이터 파싱: 수집된 `html` 데이터를 `BeautifulSoup` 라이브러리로 파싱하고 `list`, `dict` 형태로 변환 후 `DataFrame` 저장
