@@ -31,10 +31,10 @@ layout: page
       
       {% if post.categories.size > 0 %}
         {% assign category_to_show = post.categories | last %} <!-- 마지막 카테고리 가져오기 -->
-        <span class="category text-muted small category-color">{{ category_to_show }}> </span>
+        <span class="category text-muted small category-color">{{ category_to_show }}<span class="category-symbol">></span></span>
       {% endif %}
       
-      <a href="{{ post.url | relative_url }}"> {{ post.title }}</a>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
     </li>
 
     {% if forloop.last %}</ul>{% endif %}
