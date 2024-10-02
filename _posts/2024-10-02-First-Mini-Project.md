@@ -4,7 +4,7 @@ date: 2024-10-02 19:44:45 +0900
 achieved: 2024-09-25 17:30:00 +0900
 math: true
 categories: [Bootcamp, KT Aivle School]
-tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook, Pandas, Web Crawling]
+tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook, Pandas, Mini Project]
 ---
 ---------- 	
 > KT 에이블스쿨 1차 미니프로젝트를 수행한 내용 정리한 글입니다. 
