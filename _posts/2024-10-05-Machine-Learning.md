@@ -120,6 +120,7 @@ $$
 print(model.coef_)
 print(model.intercept_)
 ```
+
 ### **다중회귀**
 - 여러 독립변수가 종속변수에 영향을 미치는 선형 회귀
 - $y$ 값을 설명하기 위해서는 여러 개의 $𝑥$ 값이 필요한 경우
@@ -131,6 +132,7 @@ print(list(x_train))
 print(model.coef_)
 print(model.intercept_)
 ```
+
 ### **회귀모델 구현**
 Linear Regression 알고리즘은 회귀 모델에만 사용
 - 알고리즘 함수: `sklearn.linear_model.LinearRegression`
@@ -154,6 +156,7 @@ y_pred = model.predict(x_test)
 print(mean_absolute_error(y_test, y_pred))
 print(r2_score(y_test, y_pred))
 ```
+
 ## **K-Nearest Neighbor**
 - 학습용 데이터에서 k개의 최근접 이웃의 값을 찾아 그 값들로 새로운 값을 예측하는 알고리즘
 - k 값에 따라 예측 값이 달라지므로 적절한 k 값을 찾는 것이 중요
@@ -309,6 +312,7 @@ print(r2_score(y_test, y_pred))
 ### **분류모델 구현**
 - 알고리즘 함수: `sklearn.tree.DecisionTreeClassifier`
 - 성능평가 함수: `sklearn.metrics.confusion_matrix, sklearn.metrics.classification_report`
+
 ```python
 # 불러오기
 from sklearn.tree import DecisionTreeClassifier
@@ -455,6 +459,7 @@ model.best_score_
 - 함수 불러오기: `GridSearchCV`
 - n_iter 옵션을 지정하지 않습니다.
 - 넓은 범위와 큰 Step으로 설정한 후 범위를 좁혀 나가는 방식으로 시간을 단축합니다.
+
 ```python
 # 함수 불러오기
 from sklearn.neighbors import KNeighborsClassifier
@@ -526,6 +531,7 @@ print(r2_score(y_test, y_pred))
 ### **Random Forest - 분류모델 구현**
 - 알고리즘 함수: `sklearn.ensemble.RandomForestClassifier`
 - 성능평가 함수: `sklearn.metrics.confusion_matrix, sklearn.metrics.classification_report`
+
 ```python
 # 불러오기
 from sklearn.ensemble import RandomForestClassifier
@@ -544,9 +550,11 @@ y_pred = model.predict(x_test)
 print(confusion_matrix(y_test, y_pred))
 print(classification_report(y_test, y_pred))
 ```
+
 ### **XGBoost - 회귀모델 구현**
 - 알고리즘 함수: `xgboost.XGBRegressor`
 - 성능평가 함수: `sklearn.metrics.mean_absolute_error, sklearn.metrics.r2_score`
+
 ```python 
 # 불러오기
 from xgboost import XGBRegressor
