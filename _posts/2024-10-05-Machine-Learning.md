@@ -73,7 +73,8 @@ $$
 
 ### **분류 모델 평가 지표**
 
-![오분류표](https://github.com/user-attachments/assets/4146678e-f777-4fba-b2eb-29700fde52c1)<p align="center">오분류표</p>
+![오분류표](https://github.com/user-attachments/assets/4146678e-f777-4fba-b2eb-29700fde52c1)
+<p align="center">오분류표</p>
 
 **오분류표**
 - TN(True Negative, 진음성): 음성을 음성이라고 예측한 것
