@@ -11,7 +11,7 @@ tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook, Pandas, Machine Lear
 {: .prompt-info } 
 
 ## **개요**
-신규임대아파트 단지의 등록 차량수 예측
+딥러닝 모델링을 통한 신규임대아파트 단지의 등록 차량수 예측
 
 ## **데이터셋**
 - train.xlsx, test.xlsx
@@ -115,7 +115,7 @@ tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook, Pandas, Machine Lear
 - 파라미터: {'max_depth': 3}
 - 예측성능: 0.6651537158010903
 - MAE: 174.65043205396978
-- R2: 0.6113863442949945
+- R²: 0.6113863442949945
 
 #### **KNN**
 ![KNN](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject2_team_img3.jpg?raw=true)
@@ -124,7 +124,7 @@ tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook, Pandas, Machine Lear
 - 파라미터: {'n_neighbors': 4}
 - 예측성능: 0.6761371915901122
 - MAE: 164.60096153846155
-- R2: 0.6129804776167364
+- R²: 0.6129804776167364
 
 #### **Random Forest**
 ![Random Forest](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject2_team_img4.jpg?raw=true)
@@ -133,7 +133,7 @@ tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook, Pandas, Machine Lear
 - 파라미터: {'max_depth': 4}
 - 예측성능: 0.7574485715801873
 - MAE: 138.03102758238398
-- R2: 0.6876475342158248
+- R²: 0.6876475342158248
 
 #### **XGBoost**
 ![XGBoost](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject2_team_img5.jpg?raw=true)
@@ -142,7 +142,7 @@ tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook, Pandas, Machine Lear
 - 파라미터: {'max_depth': 1}
 - 예측성능: 0.7235627955495929
 - MAE: 133.9036045074463
-- R2: 0.6917700925614235
+- R²: 0.6917700925614235
 
 #### **LightGBM**
 ![LightGBM](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject2_team_img6.jpg?raw=true)
@@ -151,7 +151,7 @@ tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook, Pandas, Machine Lear
 - 파라미터: {'max_depth': 2}
 - 예측성능: 0.7462778686736506
 - MAE: 136.7796400536461
-- R2: 0.6728714050335658
+- R²: 0.6728714050335658
 
 #### **GreedSearch**
 ![GreedSearch](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject2_team_img7.jpg?raw=true)
@@ -160,7 +160,7 @@ tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook, Pandas, Machine Lear
 - 파라미터: {'max_depth': 6}
 - 예측성능: 0.7594187206084257
 - MAE: 128.42782726454348
-- R2: 0.7037096294257363
+- R²: 0.7037096294257363
 
 ### **성능 비교** 
 ![GreedSearch](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject2_team_img8.jpg?raw=true)
