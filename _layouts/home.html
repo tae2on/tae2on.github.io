@@ -42,14 +42,14 @@ refactor: true
 
 <div id="post-list" class="flex-grow-1 px-xl-1">
   {% for post in posts %}
-    <div class="post-preview">
+    <div class="post-preview" style="position: relative; background-color: transparent; margin-bottom: 20px;">
       <h1 style="font-size: 1.2em; color: #C59D7D;">
         <a href="{{ post.url | relative_url }}">
           <span style="color: #C59D7D;">{{ post.categories | first }} › </span>
           {{ post.title }}
         </a>
       </h1>
-      <div class="post-content" style="font-size: 0.9em;">
+      <div class="post-content" style="font-size: 0.9em; overflow: hidden; max-height: 2.4em; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">
         <p>{% include post-description.html %}</p>
       </div>
       <div class="post-meta text-muted d-flex">
@@ -70,7 +70,7 @@ refactor: true
         </div>
       </div>
     </div>
-    <hr> <!-- 포스트 구분선 -->
+    <hr style="margin: 0; border: none; border-top: 1px solid rgba(0, 0, 0, 0.1);"> <!-- 포스트 구분선 -->
   {% endfor %}
 </div>
 <!-- #post-list -->
