@@ -43,21 +43,23 @@ tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook, Pandas, Machine Lear
 - 총면적(0.82)
 
 ### **단변량 분석**
-
+#### **총세대수 수치화**
 ![총세대수 수치화](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject2_02.jpg?raw=true)
 <p align="center">총세대수 수치화</p>
 
+#### **총면적 수치화**
 ![총면적 수치화](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject2_03.jpg?raw=true)
 <p align="center">총면적 수치화</p>
 
 ### **이변량 분석**
-
+#### **총세대수와 실차량수의 관계**
 ![총세대수와 실차량수의 관계](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject2_06.jpg?raw=true)
 <p align="center">총세대수와 실차량수의 관계</p>
 
 - 총세대수와 실차량수는 양의 상관관계를 갖는 것을 볼 수 있습니다. 
 - 거의 회귀선 근처에 값들이 분포하는 것을 보아 강한 상관관계로 볼 수 있습니다. 
 
+#### **총면적과 실차량수의 관계**
 ![총면적과 실차량수의 관계](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject2_05.jpg?raw=true)
 <p align="center">총면적과 실차량수의 관계</p>
 
@@ -65,35 +67,38 @@ tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook, Pandas, Machine Lear
 - 거의 회귀선 근처에 값들이 분포하는 것을 보아 강한 상관관계로 볼 수 있습니다. 
 
 ### **범주형 변수와 실차량수의 관계 분석**
-
+#### **지역별 평균 실차량수**
 ![지역별 평균 실차량수](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject2_07.jpg?raw=true)
 <p align="center">지역별 평균 실차량수</p>
 
 - 세종이 실차량수가 가장 높은 걸로 보아 세종에는 주차 문제가 많을 것으로 예상됩니다. 
 - 충북, 전북, 제주 순으로 가장 낮은 걸로 보아 상대적으로 주차 문제가 적을 것으로 보입니다. 
 
+#### **준공연도별 평균 실차량수**
 ![준공연도별 평균 실차량수](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject2_08.jpg?raw=true)
 <p align="center">준공연도별 평균 실차량수</p>
 
 - 2017년도부터 점점 수치가 떨어지는 걸로 보아 최근 아파트 단지들이 준공될 때, 주차 공간 확보가 충분하지 않을 수 있다는 것으로 예상됩니다. 
 
+#### **건물형태별 평균 실차량수**
 ![건물형태별 평균 실차량수](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject2_09.jpg?raw=true)
 <p align="center">건물형태별 평균 실차량수</p>
 
 - 복도식 건물이 평균 실차량수가 가장 낮은 걸로 보아 주차 공간이 상대적으로 여유 있을 가능성이 높아보입니다. 
 - 계단식과 혼합식이 거의 비슷한 비율로 높은 수치를 가지고 해당 유형의 건물은 주차 공간이 부족해 보입니다. 
 
+#### **난방방식별 평균 실차량수**
 ![난방방식별 평균 실차량수](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject2_10.jpg?raw=true)
 <p align="center">난방방식별 평균 실차량수</p>
 
 - 지역난방과 지역가스난방이 다른 난방 방식에 비해 압도적으로 높은 평균 실차량수를 보이고 있습니다.
 - 이 두 가지 난방 방식이 신규 아파트 단지에서 널리 사용되고 있음으로 이러한 단지들은 인구 밀도가 높아 주차 공간 부족 문제가 심화될 가능성이 있습니다.
 
+#### **승강기설치여부별 평균 실차량수**
 ![승강기설치여부별 평균 실차량수](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject2_11.jpg?raw=true)
 <p align="center">승강기설치여부별 평균 실차량수</p>
 
 - 승강기가 없는 단지에서는 평균 실차량수가 낮은 경향을 띄고 있는 것을 보아 상대적으로 세대 수가 적거나 세대당 차량 보유수가 작다는 것으로 예상됩니다. 
-
 
 ## **팀과제: 데이터 분석 및 머신러닝 모델링** 
 개인과제의 데이터 분석을 바탕으로 팀원들과 모델링을 통한 예측
@@ -257,8 +262,15 @@ def data_pipeline(data):
     return base_data
 ```
 
+![파이프라인을 통한 전처리](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject2_team_img10.jpg?raw=true)
+<p align="center">파이프라인을 통한 전처리</p>
+
 #### **예측 결과 확인**
-test 데이터셋을 파이프라인을 통해 전처리한 후 성능이 가장 좋은 모델로 예측
-![예측 결과 확인](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject2_team_img9.jpg?raw=true)
+test 데이터셋을 파이프라인을 통해 전처리한 후 성능이 가장 좋은 모델(Random Forest)로 예측
+![예측 결과 확인](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject2_team_img11.jpg?raw=true)
 <p align="center">예측 결과 확인</p>
 
+#### **아파트 기본 정보에 예상차량수 추가**
+
+![아파트 기본 정보에 예상차량수 추가](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject2_team_img9.jpg?raw=true)
+<p align="center">아파트 기본 정보에 예상차량수 추가</p>
