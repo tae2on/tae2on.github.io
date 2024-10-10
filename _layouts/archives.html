@@ -11,7 +11,7 @@ layout: page
 <div id="archives" class="pl-xl-3">
   {% assign last_year = '' %}
   <!-- Sort posts by the achieved date in ascending order -->
-  {% assign sorted_posts = site.posts | sort: 'date' %}
+  {% assign sorted_posts = site.posts | sort: 'date' | reverse %}
   {% for post in sorted_posts %}
     {% assign cur_year = post.achieved | date: '%Y' %}
 
