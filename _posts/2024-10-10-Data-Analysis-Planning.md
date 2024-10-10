@@ -113,7 +113,7 @@ tags: [Certification, ADsP]
 - 중장기 마스터 플랜을 수립하는 절차
 
 ### **ROI 관점**
-<img width="232" alt="image" src="https://github.com/user-attachments/assets/c230c1f6-3408-4397-aa0c-634fb76783a8">
+![분석우선순위사분면](https://github.com/user-attachments/assets/875dfd29-1cc2-4275-a6c4-f6055f7e0ce9)
 <p align="center">ROI 관점</p>
 
 - 시급성 관점: 비즈니스 효과(Return) - Value
@@ -141,7 +141,7 @@ tags: [Certification, ADsP]
         - 최적화: 혁신 성과 향상에 기여 
     
 ### **데이터 분석 성숙도 모델**
-<img width="344" alt="image" src="https://github.com/user-attachments/assets/faf94cba-2fb0-420d-a93c-6776bd0bd524">
+![image](https://github.com/user-attachments/assets/2d2a6644-52f4-4279-8780-9fac00b55d10)
 <p align="center">데이터 분석 성숙도 모델</p>
 
 - 준비형: 낮은 준비도, 낮은 성숙도
