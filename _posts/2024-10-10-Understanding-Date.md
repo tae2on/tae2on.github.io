@@ -1,7 +1,7 @@
 ---
 title: "데이터 이해 | Understanding Data"
 date: 2024-10-10 20:59:00 +0900
-achieved: 2024-05-12 12:00:00 +0900
+achieved: 2024-05-10 12:00:00 +0900
 math: true
 categories: [Certification, ADsP]
 tags: [Certification, ADsP]	
