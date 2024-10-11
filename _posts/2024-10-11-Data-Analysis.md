@@ -209,6 +209,7 @@ tags: [Certification, ADsP]
 | **회귀 (SSR)**   | $SSR = \sum(\hat{y}_i - \bar{y})^2$                | $p$            | $\frac{SSR}{p}$                             | $F = \frac{MSR}{MSE}$                     |
 | **오차 (SSE)**   | $SSE = \sum(y_i - \hat{y}_i)^2$                    | $n - p - 1$    | $\frac{SSE}{n - p - 1}$                    | -                                     |
 | **총합 (SST)**   | $SST = SSR + SSE$                      | $n - 1$        | -                                           | -                                     |
+
 - ANOVA 검정: 3개 이상의 그룹의 평균을 비교하는 검정 (회귀분석의 유의성 분석시 활용)
 - 결정계수(R-square): $\frac{SSR}{SST} = 1- \frac{SSE}{SST}$
 - Adjusted R-square = $1 - (n-1) \frac{MSE}{SST}$
