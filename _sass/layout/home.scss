@@ -2,75 +2,21 @@
 #post-list {
   margin-top: 2rem;
 
-  .card-wrapper {
+/* 호버 효과 추가 */
+.card {
+  border: 0;
+  background: none;
+  transition: color 0.3s ease; /* 색상 변화 전환 추가 */
+
+    /* 포스트 제목 색상 기본값 설정 */
+    .post-title {
+      color: inherit; /* 상속받은 색상 사용 */
+    }
+
     &:hover {
-      text-decoration: none;
-    }
-
-    &:not(:last-child) {
-      margin-bottom: 1.25rem;
-    }
-  }
-
-  .card {
-    border: 0;
-    background: none;
-
-    %img-radius {
-      border-radius: $radius-lg $radius-lg 0 0;
-    }
-
-    .preview-img {
-      @extend %img-radius;
-
-      img {
-        @extend %img-radius;
-      }
-    }
-
-    .card-body {
-      height: 100%;
-      padding: 1rem;
-
-      .card-title {
-        @extend %text-clip;
-        color: var(--heading-color) !important; // 제목 색상
-        font-size: 1.25rem;
-      }
-
-      %muted {
-        color: #808080 !important; // 음소거 텍스트 색상
-      }
-
-      .card-text.content {
-        color: #7D7D7D !important; // 포스트 설명 색상
-        
-        p {
-          margin: 0;
-          color: #7D7D7D !important; // 포스트 설명 색상
-        }
-      }
-
-      .post-meta {
-        @extend %muted;
-
-        i {
-          &:not(:first-child) {
-            margin-left: 1.5rem;
-          }
-        }
-
-        em {
-          @extend %normal-font-style;
-          color: inherit;
-        }
-
-        > div:first-child {
-          display: block;
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
-        }
+      /* 포스트 제목 색상 변경 */
+      .post-title {
+        color: #A1674D !important; /* 호버 시 포스트 제목 색상 변경 */
       }
     }
   }
@@ -79,14 +25,14 @@
 /* 구분선 스타일 */
 .post-divider {
   height: 0.5px; /* 구분선 두께 */
-  background-color: #B0B0B0; /* 구분선 색상 (연한 회색) */
+  background-color: #D0D0D0; /* 구분선 색상 (연한 회색) */
   margin: 0.5rem 0; /* 구분선 위아래 간격 */
 }
 
 /* 카테고리 타이틀 스타일 */
 .category-title {
-  color: #A1674D !important; /* 카테고리 색상 */
-  font-size: 1.3rem; /* 카테고리 폰트 크기 증가 */
+  color: #A1674D; /* 기본 카테고리 색상 */
+  font-size: 1.3rem; /* 카테고리 폰트 크기 */
   font-weight: bold; /* 카테고리 텍스트 진하게 */
 }
 
@@ -104,7 +50,7 @@
 
   .post-title {
     font-size: 1.25rem; /* 제목 폰트 크기 */
-    color: var(--heading-color) !important; /* 제목 색상 */
+    color: inherit; /* 기본 색상으로 설정 */
     font-weight: bold; /* 제목 텍스트 진하게 설정 */
   }
 }
@@ -123,9 +69,9 @@
     .page-link {
       color: var(--btn-patinator-text-color);
       padding: 0 0.6rem;
-      display: -webkit-box;
-      -webkit-box-pack: center;
-      -webkit-box-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       border-radius: 0.5rem;
       border: 0;
       background-color: inherit;
@@ -157,10 +103,6 @@
 
 /* Tablet 스타일 */
 @media all and (min-width: 768px) {
-  %img-radius {
-    border-radius: 0 $radius-lg $radius-lg 0;
-  }
-
   #post-list {
     .card {
       .card-body {

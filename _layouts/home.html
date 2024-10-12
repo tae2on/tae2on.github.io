@@ -5,85 +5,98 @@ refactor: true
 
 {% include lang.html %}
 
-{% assign pinned = site.posts | where: 'pin', 'true' %}
-{% assign default = site.posts | where_exp: 'item', 'item.pin != true and item.hidden != true' %}
+<!-- 전체 콘텐츠를 위로 올리기 위한 상위 div 추가 -->
+<div style="margin-top: -3rem;"> <!-- 원하는 만큼 상단 여백을 줄입니다. -->
+  
+  <!-- 총 포스트 개수 표시 -->
+  <div class="total-posts" style="margin: 3rem 0 0 0; color: #333333; font-weight: bold; font-size: 2.1rem;"> <!-- 아래쪽 여백을 늘림 -->
+    Total ({{ site.posts.size }})
+  </div>
 
-{% assign posts = '' | split: '' %}
+  <!-- 포스트 리스트와 간격 줄이기 -->
+  <div style="margin-top: -2.0rem;"> <!-- 위쪽 여백을 제거 -->
+    {% assign pinned = site.posts | where: 'pin', 'true' %}
+    {% assign default = site.posts | where_exp: 'item', 'item.pin != true and item.hidden != true' %}
 
-<!-- Get pinned posts -->
-{% assign offset = paginator.page | minus: 1 | times: paginator.per_page %}
-{% assign pinned_num = pinned.size | minus: offset %}
+    {% assign posts = '' | split: '' %}
 
-{% if pinned_num > 0 %}
-  {% for i in (offset..pinned.size) limit: pinned_num %}
-    {% assign posts = posts | push: pinned[i] %}
-  {% endfor %}
-{% else %}
-  {% assign pinned_num = 0 %}
-{% endif %}
+    <!-- 고정 포스트 가져오기 -->
+    {% assign offset = paginator.page | minus: 1 | times: paginator.per_page %}
+    {% assign pinned_num = pinned.size | minus: offset %}
 
-<!-- Get default posts -->
-{% assign default_beg = offset | minus: pinned.size %}
-{% if default_beg < 0 %}
-  {% assign default_beg = 0 %}
-{% endif %}
+    {% if pinned_num > 0 %}
+      {% for i in (offset..pinned.size) limit: pinned_num %}
+        {% assign posts = posts | push: pinned[i] %}
+      {% endfor %}
+    {% else %}
+      {% assign pinned_num = 0 %}
+    {% endif %}
 
-{% assign default_num = paginator.posts | size | minus: pinned_num %}
-{% assign default_end = default_beg | plus: default_num | minus: 1 %}
+    <!-- 기본 포스트 가져오기 -->
+    {% assign default_beg = offset | minus: pinned.size %}
+    {% if default_beg < 0 %}
+      {% assign default_beg = 0 %}
+    {% endif %}
 
-{% if default_num > 0 %}
-  {% for i in (default_beg..default_end) %}
-    {% assign posts = posts | push: default[i] %}
-  {% endfor %}
-{% endif %}
+    {% assign default_num = paginator.posts | size | minus: pinned_num %}
+    {% assign default_end = default_beg | plus: default_num | minus: 1 %}
 
-<div id="post-list" class="post-list">
-  {% for post in posts %}
-    <article class="post-item" style="height: 180px; display: flex; flex-direction: column; justify-content: center; overflow: hidden;"> <!-- 수직 중앙 정렬 -->
-      <a href="{{ post.url | relative_url }}">
-        {% if post.image %}
-          <div class="post-thumbnail" style="flex-shrink: 0; max-height: 80px; overflow: hidden;">
-            <img src="{{ post.image.path | default: post.image }}" alt="{{ post.image.alt | xml_escape | default: 'Preview Image' }}" style="width: 100%; height: auto;">
-          </div>
-        {% endif %}
-        
-        <div class="post-title-container" style="margin-top: 5px;"> <!-- 위 간격 조정 -->
-          <h2 class="post-title" style="margin-top: 0;"> <!-- 제목 상단 간격 제거 -->
-            {% if post.categories.size > 1 %}
-              <span class="category-title" style="text-transform: uppercase;">[{{ post.categories[1] }}]</span>
+    {% if default_num > 0 %}
+      {% for i in (default_beg..default_end) %}
+        {% assign posts = posts | push: default[i] %}
+      {% endfor %}
+    {% endif %}
+
+    <div id="post-list" class="post-list">
+      {% for post in posts %}
+        <article class="post-item" style="height: 180px; display: flex; flex-direction: column; justify-content: center; overflow: hidden; transition: transform 0.3s ease;"> <!-- 수직 중앙 정렬 -->
+          <a href="{{ post.url | relative_url }}" class="card">
+            {% if post.image %}
+              <div class="post-thumbnail" style="flex-shrink: 0; max-height: 80px; overflow: hidden;">
+                <img src="{{ post.image.path | default: post.image }}" alt="{{ post.image.alt | xml_escape | default: 'Preview Image' }}" style="width: 100%; height: auto;">
+              </div>
             {% endif %}
-            {{ post.title }}
-          </h2>
-        </div>
-        
-        <div class="post-description" style="color: #7D7D7D; flex-grow: 1; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">
-          <p class="description-content">{% include post-description.html %}</p>
-        </div>
-        
-        <div class="post-meta" style="margin-top: 5px;"> <!-- 아래 간격 조정 -->
-          <i class="far fa-calendar fa-fw" style="margin-right: 3px; color: #7D7D7D;"></i>
-          <span style="color: #7D7D7D;">{% include datetime.html date=post.date lang=lang %}</span>
-          
-          {% if post.categories.size > 0 %}
-            <span class="post-category" style="margin-left: 12px; color: #7D7D7D;">
-              <i class="far fa-folder{% if post.categories.size > 1 %}-open{% endif %} fa-fw" style="margin-right: 3px;"></i>
-              {{ post.categories | join: ', ' }}
-            </span>
-          {% endif %}
+            
+            <div class="post-title-container" style="margin-top: 5px;"> <!-- 위 간격 조정 -->
+              <h2 class="post-title" style="margin-top: 0;"> <!-- 제목 상단 간격 제거 -->
+                {% if post.categories.size > 1 %}
+                  <span class="category-title" style="text-transform: uppercase;">[{{ post.categories[1] }}]</span>
+                {% endif %}
+                {{ post.title }}
+              </h2>
+            </div>
+            
+            <div class="post-description" style="color: #7D7D7D; flex-grow: 1; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">
+              <p class="description-content">{% include post-description.html %}</p>
+            </div>
+            
+            <div class="post-meta" style="margin-top: 5px;"> <!-- 아래 간격 조정 -->
+              <i class="far fa-calendar fa-fw" style="margin-right: 3px; color: #7D7D7D;"></i>
+              <span style="color: #7D7D7D;">{% include datetime.html date=post.date lang=lang %}</span>
+              
+              {% if post.categories.size > 0 %}
+                <span class="post-category" style="margin-left: 12px; color: #7D7D7D;">
+                  <i class="far fa-folder{% if post.categories.size > 1 %}-open{% endif %} fa-fw" style="margin-right: 3px;"></i>
+                  {{ post.categories | join: ', ' }}
+                </span>
+              {% endif %}
 
-          {% if post.pin %}
-            <span class="pin"><i class="fas fa-thumbtack"></i> {{ site.data.locales[lang].post.pin_prompt }}</span>
-          {% endif %}
-        </div>
-      </a>
-    </article>
-    
-    <!-- 구분선 추가 -->
-    <div class="post-divider" style="margin: 5px 0; border-top: 1px solid #ddd;"></div> <!-- 구분선 스타일 추가 -->
-  {% endfor %}
-</div>
-<!-- #post-list -->
+              {% if post.pin %}
+                <span class="pin"><i class="fas fa-thumbtack"></i> {{ site.data.locales[lang].post.pin_prompt }}</span>
+              {% endif %}
+            </div>
+          </a>
+        </article>
+        
+        <!-- 구분선 추가 -->
+        <div class="post-divider"></div> <!-- 구분선 스타일 추가 -->
+      {% endfor %}
+    </div>
+    <!-- #post-list -->
+  </div>
 
-{% if paginator.total_pages > 1 %}
-  {% include post-paginator.html %} 
-{% endif %}
+  {% if paginator.total_pages > 1 %}
+    {% include post-paginator.html %} 
+  {% endif %}
+  
+</div> <!-- 전체 콘텐츠를 위로 올리기 위한 상위 div 닫기 -->
