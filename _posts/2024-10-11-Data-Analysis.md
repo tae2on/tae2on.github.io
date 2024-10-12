@@ -109,7 +109,7 @@ tags: [Certification, ADsP]
 
 ### **기초 확률 이론**
 - 조건부 확률: 특정 사건 B가 발생했을 때 A가 발생할 확률
-    - $$P(A | B) = \frac{P(A \cap B)}{P(B)}$$
+    - $P(A|B) = \frac{P(A \cap B)}{P(B)}$
     - ex. 백신을 맞았을 때 코로나19에 걸릴 확률
 - 독립사건: A, B가 서로 영향을 주지 않는 사건
     - $$P(A \cap B) = P(A) \times P(B)$$
