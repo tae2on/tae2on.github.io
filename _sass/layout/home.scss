@@ -1,7 +1,4 @@
-/*
-  Style for Homepage
-*/
-
+/* 스타일 기본 설정 */
 #post-list {
   margin-top: 2rem;
 
@@ -37,23 +34,20 @@
 
       .card-title {
         @extend %text-clip;
-
-        color: var(--heading-color) !important;
+        color: var(--heading-color) !important; // 제목 색상
         font-size: 1.25rem;
       }
 
       %muted {
-        color: var(--text-muted-color) !important;
+        color: #808080 !important; // 음소거 텍스트 색상
       }
 
       .card-text.content {
-        @extend %muted;
-
+        color: #7D7D7D !important; // 포스트 설명 색상
+        
         p {
-          @extend %text-clip;
-
-          line-height: 1.5;
           margin: 0;
+          color: #7D7D7D !important; // 포스트 설명 색상
         }
       }
 
@@ -68,7 +62,6 @@
 
         em {
           @extend %normal-font-style;
-
           color: inherit;
         }
 
@@ -81,8 +74,42 @@
       }
     }
   }
-} /* #post-list */
+}
 
+/* 구분선 스타일 */
+.post-divider {
+  height: 0.5px; /* 구분선 두께 */
+  background-color: #B0B0B0; /* 구분선 색상 (연한 회색) */
+  margin: 0.5rem 0; /* 구분선 위아래 간격 */
+}
+
+/* 카테고리 타이틀 스타일 */
+.category-title {
+  color: #A1674D !important; /* 카테고리 색상 */
+  font-size: 1.3rem; /* 카테고리 폰트 크기 증가 */
+  font-weight: bold; /* 카테고리 텍스트 진하게 */
+}
+
+/* 제목과 내용 스타일 */
+.post-title-container {
+  display: flex; /* 수평으로 배치 */
+  flex-direction: column; /* 수직 정렬 */
+  margin-bottom: 0.5rem; /* 제목과 내용 사이의 간격 */
+
+  .post-category {
+    font-size: 1.5rem; /* 카테고리 폰트 크기 증가 */
+    color: #A1674D !important; /* 카테고리 색상 */
+    font-weight: bold; /* 카테고리 텍스트 진하게 설정 */
+  }
+
+  .post-title {
+    font-size: 1.25rem; /* 제목 폰트 크기 */
+    color: var(--heading-color) !important; /* 제목 색상 */
+    font-weight: bold; /* 제목 텍스트 진하게 설정 */
+  }
+}
+
+/* Pagination 스타일 */
 .pagination {
   color: var(--text-color);
   font-family: Lato, sans-serif;
@@ -125,10 +152,10 @@
         color: rgba(108, 117, 125, 0.57);
       }
     }
-  } /* .page-item */
-} /* .pagination */
+  }
+}
 
-/* Tablet */
+/* Tablet 스타일 */
 @media all and (min-width: 768px) {
   %img-radius {
     border-radius: 0 $radius-lg $radius-lg 0;
@@ -137,17 +164,15 @@
   #post-list {
     .card {
       .card-body {
-        padding: 1.75rem 1.75rem 1.25rem 1.75rem;
+        padding: 1.75rem;
 
-        .card-text {
-          display: inherit !important;
-        }
+        .card-text.content {
+          color: #7D7D7D !important; // 포스트 설명 색상
+          line-height: 1.5;
 
-        .post-meta {
-          i {
-            &:not(:first-child) {
-              margin-left: 1.75rem;
-            }
+          p {
+            margin: 0;
+            color: #7D7D7D !important; // 포스트 설명 색상
           }
         }
       }
@@ -155,7 +180,7 @@
   }
 }
 
-/* Hide SideBar and TOC */
+/* 작은 화면에서 Sidebar 및 TOC 숨기기 */
 @media all and (max-width: 830px) {
   .pagination {
     .page-item {
@@ -166,7 +191,7 @@
   }
 }
 
-/* Sidebar is visible */
+/* 큰 화면에서 Sidebar 표시 */
 @media all and (min-width: 831px) {
   #post-list {
     margin-top: 2.5rem;
@@ -185,5 +210,5 @@
     .page-index {
       display: none;
     }
-  } /* .pagination */
+  }
 }
