@@ -66,11 +66,11 @@ refactor: true
           
           {% if post.categories.size > 0 %}
             <span class="post-category" style="margin-left: 12px; color: #7D7D7D;">
-              <i class="fas fa-folder-open fa-fw" style="margin-right: 3px;"></i>
+              <i class="far fa-folder{% if post.categories.size > 1 %}-open{% endif %} fa-fw" style="margin-right: 3px;"></i>
               {{ post.categories | join: ', ' }}
             </span>
           {% endif %}
-          
+
           {% if post.pin %}
             <span class="pin"><i class="fas fa-thumbtack"></i> {{ site.data.locales[lang].post.pin_prompt }}</span>
           {% endif %}
