@@ -24,7 +24,6 @@
 
     &::before {
       @extend %timeline;
-
       height: 72px;
       left: 79px;
       bottom: 16px;
@@ -32,12 +31,10 @@
 
     &:first-child::before {
       @extend %timeline;
-
       height: 32px;
       top: 24px;
     }
 
-    /* Year dot */
     &::after {
       content: '';
       display: inline-block;
@@ -76,7 +73,6 @@
 
       &::before {
         @extend %timeline;
-
         top: 0;
         left: 77px;
         height: 3.1rem;
@@ -86,7 +82,7 @@
     &:last-child li:last-child::before {
       height: 1.5rem;
     }
-  } /* #archives ul */
+  }
 
   .date {
     white-space: nowrap;
@@ -106,17 +102,22 @@
   }
 
   a {
-    /* post title in Archvies */
     margin-left: 2.5rem;
     position: relative;
     top: 0.1rem;
-
+    color: black; /* 포스트 제목 색상은 검은색 */
+  
     &:hover {
+      color: #A1674D !important; /* 호버 시 색상 변경 */
       border-bottom: none;
-    }
 
+      /* 호버 시 카테고리 색상 변경 */
+      .category {
+        color: #A1674D !important; /* 호버 시 카테고리 색상 강제 변경 */
+      }
+    }
+  
     &::before {
-      /* the dot before post title */
       content: '';
       display: inline-block;
       position: relative;
@@ -131,7 +132,12 @@
       z-index: 1;
     }
   }
-} /* #archives */
+
+  .category {
+    color: #A1674D; /* 카테고리 색상 */
+    transition: color 0.3s; /* 색상 변화에 부드러운 전환 추가 */
+  }
+}
 
 @media all and (max-width: 576px) {
   #archives {

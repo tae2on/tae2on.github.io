@@ -1,38 +1,44 @@
----
+--- 
 layout: page
-# The Archives of posts.
----
+# The Archives of posts. 
+--- 
 
-{% include lang.html %}
+{% include lang.html %} 
 
-{% assign df_strftime_m = site.data.locales[lang].df.archives.strftime | default: '/ %m' %}
-{% assign df_dayjs_m = site.data.locales[lang].df.archives.dayjs | default: '/ MM' %}
+{% assign df_strftime_m = site.data.locales[lang].df.archives.strftime | default: '/ %m' %} 
+{% assign df_dayjs_m = site.data.locales[lang].df.archives.dayjs | default: '/ MM' %} 
 
-<div id="archives" class="pl-xl-3">
-  {% assign last_year = '' %}
-  <!-- Sort posts by the achieved date in descending order -->
-  {% assign sorted_posts = site.posts | sort: 'achieved' | reverse %}
-  {% for post in sorted_posts %}
-    {% assign cur_year = post.achieved | date: '%Y' %}
+<div id="archives" class="pl-xl-3"> 
+  {% assign last_year = '' %} 
+  {% assign sorted_posts = site.posts | sort: 'achieved' | reverse %} 
+  {% for post in sorted_posts %} 
+    {% assign cur_year = post.achieved | date: '%Y' %} 
 
-    {% if cur_year != last_year %}
-      {% unless forloop.first %}</ul>{% endunless %}
+    {% if cur_year != last_year %} 
+      {% unless forloop.first %}</ul>{% endunless %} 
 
-      <time class="year lead d-block">{{ cur_year }}</time>
-      {{ '<ul class="list-unstyled">' }}
+      <time class="year lead d-block">{{ cur_year }}</time> 
+      {{ '<ul class="list-unstyled">' }} 
+      {% assign last_year = cur_year %} 
+    {% endif %} 
 
-      {% assign last_year = cur_year %}
-    {% endif %}
+    <li> 
+      {% assign ts = post.achieved | date: '%s' %} 
+      <span class="date day" data-ts="{{ ts }}" data-df="DD">{{ post.achieved | date: '%d' }}</span> 
+      <span class="date month small text-muted ms-1" data-ts="{{ ts }}" data-df="{{ df_dayjs_m }}"> 
+        {{ post.achieved | date: df_strftime_m }} 
+      </span> 
 
-    <li>
-      {% assign ts = post.achieved | date: '%s' %}
-      <span class="date day" data-ts="{{ ts }}" data-df="DD">{{ post.achieved | date: '%d' }}</span>
-      <span class="date month small text-muted ms-1" data-ts="{{ ts }}" data-df="{{ df_dayjs_m }}">
-        {{ post.achieved | date: df_strftime_m }}
-      </span>
-      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-    </li>
+      {% assign second_category = post.categories[1] %} 
+      <a href="{{ post.url | relative_url }}" class="post-link"> <!-- 포스트 제목 링크 --> 
+        {% if second_category %} 
+          <span class="category">[{{ second_category }}]</span> <!-- 카테고리 --> 
+        {% endif %} 
+        {{ post.title }} 
+      </a>
+           
+    </li> 
 
-    {% if forloop.last %}</ul>{% endif %}
-  {% endfor %}
+    {% if forloop.last %}</ul>{% endif %} 
+  {% endfor %} 
 </div>
