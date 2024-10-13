@@ -31,6 +31,13 @@
       @extend %no-bottom-border;
 
       font-size: 1.1rem;
+      color: #000; /* 기본 색상: 검은색 */
+
+      /* 호버 시 색상 변경 및 밑줄 제거 */
+      &:hover {
+        color: #A1674D !important; /* 호버 색상: #A1674D */
+        border-bottom: none;
+      }
     }
   }
 }
