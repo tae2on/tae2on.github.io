@@ -26,6 +26,18 @@
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
     }
+
+    /* Parent category color */
+    color: #000; /* 상위 폴더 기본 색상: 검은색 */
+    a {
+      color: inherit; /* 링크 색상을 상위 폴더 색상과 동일하게 설정 */
+
+      /* 호버 시 색상 변경 */
+      &:hover {
+        color: #A1674D !important; /* 호버 시 상위 폴더 색상: #A1674D */
+        border-bottom: none;
+      }
+    }
   }
 
   i {
@@ -47,6 +59,20 @@
     &:last-child {
       border-bottom: 0;
     }
+
+    /* Child category color */
+    color: #000; /* 하위 폴더 기본 색상: 검은색 */
+
+    a {
+      color: #000; /* 하위 폴더 기본 색상: 검은색 */
+      text-decoration: none; /* 기본 텍스트 장식 제거 */
+
+      /* 호버 시 색상 변경 및 밑줄 제거 */
+      &:hover {
+        color: #A1674D !important; /* 호버 시 하위 폴더 색상: #A1674D */
+        border-bottom: none;
+      }
+    }
   }
 } /* .categories */
 
@@ -66,7 +92,8 @@
 
   &:hover {
     i {
-      color: var(--categories-icon-hover-color);
+      color: #A1674D !important; /* 호버 시 아이콘 색상: #A1674D */
+      border-bottom: none;
     }
   }
 }
