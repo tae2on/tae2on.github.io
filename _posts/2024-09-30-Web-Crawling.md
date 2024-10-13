@@ -44,6 +44,7 @@ tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook, Pandas, Web Crawling
 - CSS: 웹 페이지의 스타일 지정 (Bootstrap, Semantic UI, Materialize, Material Design Lite)
 - Javascript: 웹 페이지에 동적인 기능을 추가
 <br><br>
+
 **Server (Backend)**
 - Python (Django, Flask, FastAPI)
 - Java (Spring)
