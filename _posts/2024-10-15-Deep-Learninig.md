@@ -120,7 +120,7 @@ history = model.fit(x_train, y_train, epochs = 20, validation_split=0.2).history
         - 너무 과도하게 학습이 된 경우 
             - Epoch 수 줄이기
 
-<img src="https://raw.githubusercontent.com/tae2on/tae2on.github.io/main/assets/img/deep_learning_img1.png" alt="deep_learning_img1" width="500" height="200" />
+<img src="https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/deep_learning_img1.jpg?raw=true" alt="deep_learning_img1" width="500" height="200" />
 <p style="text-align: center;">_바람직하지 않은 학습곡선_</p>
  
 ### **회귀 모델 평가**
@@ -382,7 +382,7 @@ model = Model(inputs = [input_1, input_2], outputs = output)
     4. 검증(예측)
     5. 검증(평가)
 
-## **RNN으로 시계열 데이터 모델링하기**
+## **RNN**
 - SimpleRNN
     - 노드 수 1개 → 레이어의 출력 형태: timesteps * 노드수
         - return_sequences: 출력 데이터를 다음 레이어에 전달할 크기 결정
@@ -422,7 +422,7 @@ model.compile(optimizer = Adam(0.01), loss = 'mse')
 hist = model.fit(x_train, y_train, epochs = 100, verbose = 0, validation_split = .2).history
 ```
 
-## **LSTM**
+### **LSTM**
 - RNN의 장기 의존성(long term dependencies) 문제 해결 
     - 구조
         - time step 간에 두 종류의 상태 값 업데이트 관리
