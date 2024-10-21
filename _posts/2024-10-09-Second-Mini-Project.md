@@ -17,7 +17,7 @@ tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook, Pandas, Processing, 
 - train.xlsx, test.xlsx
 - 단지별 데이터와 단지 상세 데이터가 포함
 
-## **개인과제 - 데이터 전처리 및 분석**
+## **개인과제**
 도메인 이해 및 데이터 전처리, 데이터 분석
 ### **데이터 전처리** 
 - 결측치 채우기 (최빈값)
@@ -100,7 +100,7 @@ tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook, Pandas, Processing, 
 
 - 승강기가 없는 단지에서는 평균 실차량수가 낮은 경향을 띄고 있는 것을 보아 상대적으로 세대 수가 적거나 세대당 차량 보유수가 작다는 것으로 예상됩니다. 
 
-## **팀과제: 데이터 분석 및 머신러닝 모델링** 
+## **팀과제** 
 개인과제의 데이터 분석을 바탕으로 팀원들과 모델링을 통한 예측
 ### **가변수화**
 ![가변수화](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject2_team_img1.jpg?raw=true)
