@@ -1,5 +1,5 @@
 ---
-title: "데이터 분석 기획 | Data Analysis Planning"
+title: "1과목 | 데이터 분석 기획"
 date: 2024-10-10 22:13:21 +0900
 achieved: 2024-05-10 12:00:00 +0900
 categories: [Certification, ADsP]
