@@ -4,7 +4,7 @@ date: 2024-10-27 12:13:24 +0900
 achieved: 2024-10-25 17:30:00 +0900
 math: true
 categories: [Bootcamp, KT Aivle School]
-tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook, Pandas, Deep Learning]
+tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook, Pandas, Deep Learning, Visual Intelligence]
 ---
 ---------- 	
 > KT 에이블스쿨 6기 시각지능 딥러닝에 진행한 강의 내용 정리한 글입니다. 
