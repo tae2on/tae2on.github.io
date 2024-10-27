@@ -76,9 +76,7 @@ LeNet-5는 손글씨 숫자 인식(MNIST 데이터셋)과 같은 간단한 이�
         - 각 노드는 1000개의 클래스에 대한 확률을 출력
 
 ### **Feature map**
-$$
-n_{out} = \left\lfloor \frac{n_{in} + 2p - k}{s} \right\rfloor + 1
-$$
+$$ n_{out} = \left\lfloor \frac{n_{in} + 2p - k}{s} \right\rfloor + 1 $$
 - $n_{in}$: input feature map의 가로세로 사이즈
 - $n_{out}$: output feature map의 가로세로 사이즈
 - $k$: Convolution filter의 가로세로 사이즈
@@ -121,9 +119,7 @@ $$
         - 객체가 특정 클래스에 속할 확률과 IoU를 곱하는 방식
 
 #### **IoU**
-$$
-\text{IoU} = \frac{\text{Area of Overlap}}{\text{Area of Union}}
-$$
+$$ \text{IoU} = \frac{\text{Area of Overlap}}{\text{Area of Union}} $$
 
 - Area of Overlap: Ground-truth Bounding Box와 Prediction Bounding Box가 겹치는 영역의 면적
 - Area of Union: 두 박스의 합집합 영역의 면적
