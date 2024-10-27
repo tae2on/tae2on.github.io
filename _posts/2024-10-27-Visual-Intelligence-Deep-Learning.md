@@ -6,7 +6,7 @@ math: true
 categories: [Bootcamp, KT Aivle School]
 tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook, Pandas, Deep Learning, Visual Intelligence]
 ---
----------- 	
+----------
 > KT 에이블스쿨 6기 시각지능 딥러닝에 진행한 강의 내용 정리한 글입니다. 
 {: .prompt-info } 
 
@@ -194,4 +194,4 @@ Precision-Recall Curve는 Precision과 Recall을 모두 감안한 지표로 모�
 - 버전
     - Yolov3: 3종류의 탐지 커널 사용하여 기존에 비해 Object의 크기 영향을 덜 받음
     - Yolov4: One-stage Detector에 대한 검증
-    - Yolov5: PyTorch 기반으로 구현되어 경량화 및 사용자 친화성을 강조 
+    - Yolov5: PyTorch 기반으로 구현되어 경량화 및 사용자 친화성을 강조
