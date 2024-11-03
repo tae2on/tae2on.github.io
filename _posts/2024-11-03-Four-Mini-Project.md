@@ -64,7 +64,7 @@ Augmentation
 - 사용 데이터셋: 팀원 5명의 얼굴 파일, Face_recognition_1, Face_recognition_2
 - 사용 모델: Yolo11n
 ![Base Model](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject4_img01.jpg?raw=true)
-<p class="client">Base: 10초간 jaeyub이 움직이는 동안의 데이터 시각화</p>
+<p align="center">Base: 10초간 jaeyub이 움직이는 동안의 데이터 시각화</p>
 
 - 전반적으로 본인의 얼굴을 인식하지 못하고 other_face로 인식하는 경향이 보임
 - 추가적인 개선이 필요
@@ -73,7 +73,7 @@ Augmentation
 Train 과정에서 한 번 데이터를 증강하기 
 
 ![Train 증강](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject4_img02.jpg?raw=true)
-<p class="client">train 과정에서 증강하였을 때의 데이터 수</p>
+<p align="center">train 과정에서 증강하였을 때의 데이터 수</p>
 
 - Auto Augment: 미리 정의된 증강 정책을 자동으로 적용
 - HSV Saturation: 이미지의 채도를 일부 변경
@@ -81,7 +81,7 @@ Train 과정에서 한 번 데이터를 증강하기
 - Mixup: 두 이미지와 해당 레이블을 혼합하여 합성 이미지 생성
 
 ![가설1 시각화](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject4_img03.jpg?raw=true)
-<p class="client">Train 과정에서 증강: 10초간 jaeyub이 움직이는 동안의 데이터 시각화</p>
+<p align="center">Train 과정에서 증강: 10초간 jaeyub이 움직이는 동안의 데이터 시각화</p>
 
 - Base Model에 비해 other_face로 탐지가 눈에 띄게 줄어듦
 - 외국인 얼굴 위주의 Class인 other_face와 다르게 같은 한국인 Class로 분류됨
@@ -91,12 +91,12 @@ Train 과정에서 한 번 데이터를 증강하기
 Yolo11m 사용하기
 
 ![yolo11m 사용](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject4_img04.jpg?raw=true)
-<p class="client">Yolo11m 사용하였을 때의 데이터 수</p>
+<p align="center">Yolo11m 사용하였을 때의 데이터 수</p>
 
 - Base Model인 가장 가벼운 Yolo11n 대신 매개변수와 계산량이 조금 더 깊고 무거운 Yolo11m 사용
 
 ![가설2 시각화](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject4_img05.jpg?raw=true)
-<p class="client">Model 변경: 10초간 jaeyub이 움직이는 동안의 데이터 시각화</p>
+<p align="center">Model 변경: 10초간 jaeyub이 움직이는 동안의 데이터 시각화</p>
 
 - 전체적으로 학습이 잘 된 모습
 - 신뢰도(confidence score)는 상대적으로 낮지만 오탐률은 줄어듦
@@ -105,55 +105,55 @@ Yolo11m 사용하기
 ### **가설3. 데이터 전처리**
 
 ![가설3](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject4_img06.jpg?raw=true)
-<p class="client">other face인 데이터셋 Face_recognition_1, Face_recognition_2 시각화</p>
+<p align="center">other face인 데이터셋 Face_recognition_1, Face_recognition_2 시각화</p>
 
 - Face_recognition_1: 각 이미지에 여러 개의 라벨이 많이 포함되어 있어 하나의 사진에 여러 사람이 존재할 가능성이 높은 데이터셋
 - Face_recognition_2: 각 이미지에 한 개의 라벨이 많이 포함되어 있어 하나의 사진에 한 사람이 존재할 가능성이 높은 데이터셋 
 
 #### **가설 3-1. Face_recognition_1만 사용** 
 ![가설3-1 데이터셋](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject4_img07.jpg?raw=true)
-<p class="client">Face_recognition_1만 사용하였을 때의 데이터 수</p>
+<p align="center">Face_recognition_1만 사용하였을 때의 데이터 수</p>
 
 - 하나의 이미지에 여러 개의 라벨이 포함된 데이터셋인 Face_recognition_1만 사용
 
 ![가설3-1 데이터셋](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject4_img08.jpg?raw=true)
-<p class="client">Face_recognition_1만 사용: 10초간 jaeyub이 움직이는 동안의 데이터 시각화</p>
+<p align="center">Face_recognition_1만 사용: 10초간 jaeyub이 움직이는 동안의 데이터 시각화</p>
 
 - other_face로 인식하는 경향이 크고 jaeyub이 아닌 다른 사람으로 인식함
 - 우리의 목적과 맞지 않는 데이터셋
 
 #### **가설 3-2-1. Face_recognition_2만 사용** 
 ![가설3-2-1 데이터셋](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject4_img09.jpg?raw=true)
-<p class="client">Face_recognition_2만 사용하였을 때의 데이터 수</p>
+<p align="center">Face_recognition_2만 사용하였을 때의 데이터 수</p>
 
 - 하나의 이미지에 한 개의 라벨이 많이 포함된 데이터셋인 Face_recognition_2만 사용
 
 ![가설3-2-1](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject4_img10.jpg?raw=true)
-<p class="client">Face_recognition_2만 사용: 10초간 jaeyub이 움직이는 동안의 데이터 시각화</p>
+<p align="center">Face_recognition_2만 사용: 10초간 jaeyub이 움직이는 동안의 데이터 시각화</p>
 
 - 오탐률이 줄어들고 신뢰도가 Base Model에 비해 월등히 올라감
 - 우리의 목적에 부합하는 데이터셋
 
 #### **가설 3-2-2. Face_recognition_2의 Label이 1인 값만 사용** 
 ![가설3-2-2 데이터셋](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject4_img11.jpg?raw=true)
-<p class="client">Face_recognition_2의 Label이 1인 값만 사용하였을 때의 데이터 수</p>
+<p align="center">Face_recognition_2의 Label이 1인 값만 사용하였을 때의 데이터 수</p>
 
 - Face_recognition_2 데이터셋에서 하나의 이미지에 한 개의 라벨 포함된 데이터셋 사용 
 
 ![가설3-2-1](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject4_img12.jpg?raw=true)
-<p class="client">Face_recognition_2의 Label이 1인 값만 사용: 10초간 jaeyub이 움직이는 동안의 데이터 시각화</p>
+<p align="center">Face_recognition_2의 Label이 1인 값만 사용: 10초간 jaeyub이 움직이는 동안의 데이터 시각화</p>
 
 - 모델 성능 향상에 미치는 영향이 거의 없음
 - 1인 탐지를 목적으로 하기 때문에 가설 3-2-1의 모델보다 성능 향상을 기대하였지만 실패 
 
 #### **가설 3-3. Face_recognition의 Class 랜덤 3000개 사용** 
 ![가설3-3 데이터셋](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject4_img13.jpg?raw=true)
-<p class="client">Face_recognition_2의 Label이 1인 값만 사용하였을 때의 데이터 수</p>
+<p align="center">Face_recognition_2의 Label이 1인 값만 사용하였을 때의 데이터 수</p>
 
 - 데이터의 불균형을 해소하기 위해 Face_recognition 데이터에서 무작위로 3000개를 선택하여 사용 
 
 ![가설3-2-1](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject4_img14.jpg?raw=true)
-<p class="client">Face_recognition의 Class 랜덤 3000개 사용: 10초간 jaeyub이 움직이는 동안의 데이터 시각화</p>
+<p align="center">Face_recognition의 Class 랜덤 3000개 사용: 10초간 jaeyub이 움직이는 동안의 데이터 시각화</p>
 
 - Class 불균형을 해결하기 위해 other face class의 데이터 수를 줄임
 - other face로 오탐하는 비율은 줄었지만 jaeyub이 아닌 다른 Class로 오탐했음
