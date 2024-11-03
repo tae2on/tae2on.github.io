@@ -36,6 +36,7 @@ cd ..
 cd .. 
 pip install -r requirements.txt
 ```
+
 ## **데이터** 
 ### **데이터 수집**
 팀원 4명의 얼굴 사진 
