@@ -20,7 +20,7 @@ tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook, Pandas, Deep Learnin
 
 ## **가상환경 구축**
 
-```cmd
+```
 # 프로젝트 폴더 이동
 cd C:\Users\User\KT_Project\M4
 
