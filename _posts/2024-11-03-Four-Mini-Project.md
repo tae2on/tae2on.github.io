@@ -61,8 +61,9 @@ Augmentation
 
 ## **Model**
 ### **Base Model**
-- 사용 데이터셋: 팀원 5명의 얼굴 파일, Face_recognition_1, Face_recognition_2
-- 사용 모델: Yolo11n
+사용 데이터셋: 팀원 5명의 얼굴 파일, Face_recognition_1, Face_recognition_2 <br>
+사용 모델: Yolo11n
+
 ![Base Model](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject4_img01.jpg?raw=true)
 <p align="center">Base: 10초간 jaeyub이 움직이는 동안의 데이터 시각화</p>
 
@@ -70,11 +71,11 @@ Augmentation
 - 추가적인 개선이 필요
 
 ### **가설1. Train과정에서 데이터 증강**
-Train 과정에서 한 번 데이터를 증강하기 
 
 ![Train 증강](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject4_img02.jpg?raw=true)
 <p align="center">train 과정에서 증강하였을 때의 데이터 수</p>
 
+Train 과정에서 한 번 데이터를 증강하기 
 - Auto Augment: 미리 정의된 증강 정책을 자동으로 적용
 - HSV Saturation: 이미지의 채도를 일부 변경
 - Mosaic: 네 개의 훈련 이미지를 하나로 결합해 다양한 장면과 객체 상호작용을 시뮬레이션
@@ -88,11 +89,11 @@ Train 과정에서 한 번 데이터를 증강하기
 - 개선의 여지가 보임
 
 ### **가설2. Model 변경**
-Yolo11m 사용하기
 
 ![yolo11m 사용](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject4_img04.jpg?raw=true)
 <p align="center">Yolo11m 사용하였을 때의 데이터 수</p>
 
+Yolo11m 사용하기
 - Base Model인 가장 가벼운 Yolo11n 대신 매개변수와 계산량이 조금 더 깊고 무거운 Yolo11m 사용
 
 ![가설2 시각화](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject4_img05.jpg?raw=true)
