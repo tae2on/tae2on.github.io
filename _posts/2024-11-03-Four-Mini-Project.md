@@ -39,20 +39,20 @@ pip install -r requirements.txt
 
 ## **데이터** 
 ### **데이터 수집**
-팀원 4명의 얼굴 사진 
+**팀원 4명의 얼굴 사진** 
 - 상반신 포함된 사진: 150장 
 - 얼굴만 포함된 사진: 1050장 
 <br>
 
-유명인 얼굴 사진(other_face)
+**유명인 얼굴 사진(other_face)**
 - Face_recognition_1
 - Face_recognition_2
 
 ### **Annotation & Augmentation**
-Annotation
+**Annotation**
 - Roboflow 사용하여 팀원 5명의 얼굴 사진을 라벨링(Labeling)합니다.
 
-Augmentation
+**Augmentation**
 - Rotatoin(회전): 이미지를 특정 각도인 -15° ~ +15° 사이의 임의 각도로 이미지를 회전합니다.
 - Brightness(밝기): -15% ~ +15%의 밝기 변화를 조정합니다. 
 - Blur(블러): 이미지를 흐리게 만들어 노이즈나 흐릿한 이미지에서 객체를 인식할 수 있도록 블러 적용합니다. 
