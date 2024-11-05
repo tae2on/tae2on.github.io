@@ -118,12 +118,12 @@ comments:
   giscus:
     repo: tae2on/tae2on.github.io # <gh-username>/<repo>
     repo_id: R_kgDOM0e6VA
-    category: Comments
-    category_id: DIC_kwDOM0e6VM4CiqpP
-    mapping: pathname # optional, default to 'pathname'
+    category: "General"
+    category_id: "DIC_kwDOM0e6VM4CiqpQ"
+    mapping: "pathname" # optional, default to 'pathname'
     strict: # optional, default to '0'
     input_position: # optional, default to 'bottom'
-    lang: ko # optional, default to the value of `site.lang`
+    lang:  # optional, default to the value of `site.lang`
     reactions_enabled: # optional, default to the value of `1`
 
 # Self-hosted static assets, optional › https://github.com/cotes2020/chirpy-static-assets
