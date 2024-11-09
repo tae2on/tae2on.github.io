@@ -180,6 +180,7 @@ $$
 $$
 H(x) = W x + b
 $$
+
 $H(x)$: 예측된 값, $W$: 가중치, $b$: 편향, $x$: 입력 데이터 
 
 **비용함수**
@@ -205,12 +206,15 @@ $alpha$: 학습률(Learning rate)로 가중치 갱신 속도를 조절하는 하
 #### **Binary Classification**
 
 **로지스틱/시그모이드 함수**
+
 $$
 g(X) = \frac{1}{1 + e^{-W^T X}}
 $$
+
 이진분류에서 사용
 
 **비용함수**
+
 $$
 g(z) = \frac{1}{1 + e^{-W^T X}}
 $$
@@ -229,6 +233,7 @@ $$x_{1} W_{C1} + x_{2} W_{C2}$$
 입력이 ($x_{1}, x_{2}$)에 대해 세 개의 클래스 A,B,C에 대한 예측을 수행합니다. 각 클래스에 대해 확률 값을 계산하여 가장 높은 확률을 가진 클래스를 선택하는 방식입니다. 
 
 **비용함수**
+
 $$
 C(S, L) = - \sum L_i \log(S_i)
 $$
@@ -345,7 +350,7 @@ $$
     - LaMDA
 
 ### **ChatGPT**
-ChatGPT는 Generative Pre-trained Transformer 모델을 대화형으로 최적화한 것입니다. <br>
+ChatGPT는 Generative Pre-trained Transformer 모델을 대화형으로 최적화한 것입니다. <br><br>
 Generative: 텍스트를 생성하는 모델로 주어진 문맥에 맞는 다음 단어를 예측 <br>
 Pre-trained: 대규모 텍스트 데이터를 사전 학습하여 기본적인 언어 패턴을 익힘 <br>
 Transformer: 인코더-디코더 구조를 기반으로 하는 신경망 아키텍처로 Self-Attention 메커니즘을 활용하여 문맥 정보를 효과적으로 처리
