@@ -74,7 +74,7 @@ $$
 - $p$ = 2: Euclidean Distance(유크리드 거리)
     - 일반적인 직선 거리를 나타내며 피타고라스 정리를 기반으로 계산 
 
-#### 코사인 
+#### **코사인** 
 벡터 $\vec{x}$와 벡터 $\vec{y}$ 사이의 각도 차이를 기반으로 유사성을 측정하는 방법 
 $$
 \text{cos}(\vec{x}, \vec{y}) = \frac{\sum_{i=1}^{n} x_i y_i}{\sqrt{\sum_{i=1}^{n} x_i^2} \cdot \sqrt{\sum_{i=1}^{n} y_i^2}}
@@ -105,7 +105,7 @@ $$
 - 데이터 행렬(Data Matrix)
     - 객체(관측값)-특징 구조로 데이터 포인트가 행, 특징이 열에 배치
 
-![거리](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/Distance_Matrix.jpg?raw=true)
+![거리](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/Distance_Matrix.png?raw=true)
 
 
 - 거리(비유사성) 행렬(Distance/Dissimilarity Matrix)
@@ -343,6 +343,7 @@ $$
 4. 초거대 AI
     - GPT-3
     - LaMDA
+
 ### **ChatGPT**
 ChatGPT는 Generative Pre-trained Transformer 모델을 대화형으로 최적화한 것입니다. <br>
 Generative: 텍스트를 생성하는 모델로 주어진 문맥에 맞는 다음 단어를 예측 <br>
