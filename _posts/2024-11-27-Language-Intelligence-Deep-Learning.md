@@ -16,6 +16,7 @@ tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook, Pandas, Deep Learnin
 $$
 \text{TF-IDF}(t, d, D) = \text{TF}(t, d) \times \text{IDF}(t, D)
 $$
+
 $t$:특정 단어, $d$: 특정 문서, $D$: 전체 문서 집합
 
 - TF: 특정 단어가 문서에서 얼마나 자주 나타나는지를 나타내는 지표
@@ -66,9 +67,11 @@ $t$:특정 단어, $d$: 특정 문서, $D$: 전체 문서 집합
 ### **거리 측정 방식**
 #### **민코프스키 거리** 
 두 점 사이의 거리(유사도)를 측정하는 일반화된 방식으로 다양한 값의 p에 따라 다른 거리 측정 방법을 표현
+
 $$
 d(\mathbf{x}, \mathbf{y}) = \left( \sum_{i=1}^{n} |x_i - y_i|^p \right)^{\frac{1}{p}}
 $$
+
 - $p$ = 1: Manhattan Distance(맨하튼 거리)
     - 두 벡터 사이의 축을 따라 이동한 거리의 합을 계산하는 방법
 - $p$ = 2: Euclidean Distance(유크리드 거리)
@@ -76,9 +79,11 @@ $$
 
 #### **코사인** 
 벡터 $\vec{x}$와 벡터 $\vec{y}$ 사이의 각도 차이를 기반으로 유사성을 측정하는 방법 
+
 $$
 \text{cos}(\vec{x}, \vec{y}) = \frac{\sum_{i=1}^{n} x_i y_i}{\sqrt{\sum_{i=1}^{n} x_i^2} \cdot \sqrt{\sum_{i=1}^{n} y_i^2}}
 $$
+
 - 코사인 거리는 코사인 유사도를 1에서 뺀 값으로 값의 범위는 $0 \leq d(\vec{x}, \vec{y}) \leq 2$
 
 ## **비지도학습**
@@ -110,7 +115,7 @@ $$
 
 - 거리(비유사성) 행렬(Distance/Dissimilarity Matrix)
     - 두 데이터 포인트 사이의 거리를 나타내며 대칭적 또는 삼각형 모양의 행렬로 나타냄
-    - 거리 행렬에서는 n개의 데이터 포인트의 각 쌍에 대한 거리가 계산되어 같은 데이터는 거리가 0
+    - 거리 행렬에서는 n개의 데이터 포인트의 각 쌍에 대한 거리가 계산되어 같은 데이터는 거리가 0임
 
 ## **Partitioning Approach**
 데이터를 k개의 클러스터로 분할하는 방식으로 주어진 데이터를 여러 군집으로 나누어 각각의 군집에 속하는 데이터 간의 유사성을 최대화하고 다른 군집과의 차이를 최대화하는 것을 목표로 하며, k의 수를 미리 지정해줘야 합니다.
@@ -177,6 +182,7 @@ $$
 ### **Linear Functions**
 #### **Linear Regression**
 **선형 모델**
+
 $$
 H(x) = W x + b
 $$
