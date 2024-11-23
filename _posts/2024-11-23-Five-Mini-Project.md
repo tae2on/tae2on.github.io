@@ -94,6 +94,7 @@ df['voc_trt_perd_itg_cd'].value_counts()
 ```
 
 4. 데이터 결측치 처리
+
 ```python
 # voc_trt_perd_itg_cd 컬럼에서 '_' 값이 차지하는 비율이 50%가 넘는 것을 확인하고, 이 voc_trt_perd_itg_cd 컬럼을 삭제
 underscore_ratio = (df['voc_trt_perd_itg_cd'] == '_').mean()
@@ -180,6 +181,7 @@ X = df6.drop(target, axis=1)
 
 train_X, test_X, train_y, test_y = train_test_split(X, y, train_size=.8, stratify=y, random_state=42)
 ```
+
 7. 데이터 정규분포화, 표준화
 
 ```python
