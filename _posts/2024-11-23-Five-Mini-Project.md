@@ -39,7 +39,7 @@ AI 기술에 대한 기본 지식과 실무 적용 능력을 평가합니다. �
 - 모델 성능평가 및 그래프 출력
 
 ### **실행 코드** 
-- 필요한 라이브러리 설치
+a. 필요한 라이브러리 설치
 
 ```python
 # pip 이용해서 seaborn을 설치
@@ -54,14 +54,14 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 ```
 
-- 데이터 로딩
+b. 데이터 로딩
 
 ```python
 # pandas read_csv 함수를 사용하여 voc_data.csv 파일을 읽어온 후 df에 저장
 df = pd.read_csv('voc_data.csv')
 ```
 
-- 데이터 구성 확인
+c. 데이터 구성 확인
 
 ```python
 # "df" DataFrame 이용해서 읽어들인 파일의 앞부분 5줄, 뒷부분 5줄을 출력
@@ -93,7 +93,7 @@ df['voc_trt_perd_itg_cd']
 df['voc_trt_perd_itg_cd'].value_counts()
 ```
 
-- 데이터 결측치 처리
+d. 데이터 결측치 처리
 
 ```python
 # voc_trt_perd_itg_cd 컬럼에서 '_' 값이 차지하는 비율이 50%가 넘는 것을 확인하고, 이 voc_trt_perd_itg_cd 컬럼을 삭제
@@ -154,7 +154,7 @@ df5.drop(columns=date_cols, axis=1, inplace=True)
 df5.drop('voc_mis_pbls_yn', axis=1, inplace=True)
 ```
 
-- 라벨 인코딩, 원핫 인코딩
+e. 라벨 인코딩, 원핫 인코딩
 
 ```python
 # df5에 대해 object 타입 컬럼을 cat_cols에 저장하세요. 그 중 cat_cols의 cust_clas_itg_cd 컬럼에 대해 LabelEncoder를 적용 (적용 후 df5에 저장)
@@ -169,7 +169,7 @@ df5['cust_clas_itg_cd'] = encoder.fit_transform(df5['cust_clas_itg_cd'])
 df6 = pd.get_dummies(df5, drop_first=True)
 ```
 
-- x, y 데이터 분리
+f. x, y 데이터 분리
 
 ```python
 # df6에 대해 X, y 값을 가지고 8:2 비율로 Train , Test Dataset으로 나누기 (y 클래스 비율에 맞게 분리, y 값은 'trm_yn_Y' 컬럼, random_state는 42)
@@ -182,7 +182,7 @@ X = df6.drop(target, axis=1)
 train_X, test_X, train_y, test_y = train_test_split(X, y, train_size=.8, stratify=y, random_state=42)
 ```
 
-- 데이터 정규분포화, 표준화
+g. 데이터 정규분포화, 표준화
 
 ```python
 # 사이킷런의 StandardScaler로 훈련데이터셋은 정규분포화(fit_transform)하고 테스트 데이터셋은 표준화(transform)
@@ -193,7 +193,7 @@ train_X_s = scaler.fit_transform(train_X)
 test_X_s = scaler.transform(test_X)
 ```
 
-- 머신러닝 모델링 & 모델 성능평가 및 그래프 출력
+h. 머신러닝 모델링 & 모델 성능평가 및 그래프 출력
 
 ```python
 # LogisticRegression 모델을 만들고 학습을 진행 (단, 규제강도C는 10으로 설정, 계산에 사용할 작업수 max_iter는 2000으로 설정하세요)
@@ -247,7 +247,7 @@ model = LinearRegression()
 model.fit(x_data, y_data)
 ```
 
-- 딥러닝 모델링 & 모델 성능 평가 및 그래프 출력
+i. 딥러닝 모델링 & 모델 성능 평가 및 그래프 출력
 
 ```python
 # 해지여부를 분류하는 딥러닝 모델
@@ -353,13 +353,13 @@ accuracy_score(np.argmax(pred_y, axis=1), test_y)
 - 모델 성능평가 및 그래프 출력
 
 ### **실행 코드**
-- 필요한 라이브러리 설치
+a. 필요한 라이브러리 설치
 
-- 데이터 로딩
+b. 데이터 로딩
 
-- df에서 불필요한 customerID 컬럼 삭제하고 df1에 저장
+c. df에서 불필요한 customerID 컬럼 삭제하고 df1에 저장
 
-- df1의 TotalCharges 컬럼의 타입을 float로 변경
+d. df1의 TotalCharges 컬럼의 타입을 float로 변경
 
 ```python
 # TotalCharge의 컬럼 타입을 확인하는 코드를 작성
@@ -371,11 +371,11 @@ df1['TotalCharges'] = df1['TotalCharges'].astype(float)
 df2=df1.copy()
 ```
 
-- df2에서 churn 컬럼의 데이터별 개수를 확인하는 코드를 작성하고 Yes, No를 각각 1, 0으로 변환한 후 df3에 저장
+e. df2에서 churn 컬럼의 데이터별 개수를 확인하는 코드를 작성하고 Yes, No를 각각 1, 0으로 변환한 후 df3에 저장
 
-- df3의 모든 컬럼에 대해 결측치를 확인하는 코드를 작성하고 결측치를 처리
+f. df3의 모든 컬럼에 대해 결측치를 확인하는 코드를 작성하고 결측치를 처리
 
-- df4에서 SeniorCitizen 컬럼을 bar 차트로 확인해보고 불균형을 확인
+g. df4에서 SeniorCitizen 컬럼을 bar 차트로 확인해보고 불균형을 확인
 
 ```python
 # df4에서 SeniorCitizen 컬럼을 bar 차트로 확인해보고 불균형을 확인
@@ -385,7 +385,7 @@ df4.drop('SeniorCitizen', axis=1, inplace=True)
 df4.info()
 ```
 
-- df4에서 다음의 가이드에 따라 데이터를 시각화
+h. df4에서 다음의 가이드에 따라 데이터를 시각화
 
 ```python
 # tenure (서비스 사용기간)에 대해 히스토그램으로 시각화 
@@ -405,11 +405,11 @@ sns.heatmap(df4[['tenure','MonthlyCharges','TotalCharges']].corr(), annot=True)
 print(0.83)
 ```
 
-- df4에서 컬럼의 데이터 타입이 object인 컬럼들을 원-핫 인코딩
+i. df4에서 컬럼의 데이터 타입이 object인 컬럼들을 원-핫 인코딩
 
-- df5에 대해 Scikit-learn의 train_test_split 함수로 훈련, 검증 데이터를 분리
+j. df5에 대해 Scikit-learn의 train_test_split 함수로 훈련, 검증 데이터를 분리
 
-- MinMaxScaler 함수를 'scaler'로 정의하고 데이터를 정규화
+k. MinMaxScaler 함수를 'scaler'로 정의하고 데이터를 정규화
 
 ```python
 from sklearn.preprocessing import MinMaxScaler
@@ -418,9 +418,9 @@ X_train = scaler.fit_transform(X_train)
 X_valid = scaler.transform(X_valid)
 ```
 
-- 머신러닝 모델링 & 모델 성능평가 및 그래프 출력
+l. 머신러닝 모델링 & 모델 성능평가 및 그래프 출력
 
-- 딥러닝 모델링 & 모델 성능평가 및 그래프 출력
+m. 딥러닝 모델링 & 모델 성능평가 및 그래프 출력
 
 ## **네비게이션 도착시간 예측**
 네비게이션 데이터를 활용한 도착 시간 예측
@@ -431,11 +431,11 @@ X_valid = scaler.transform(X_valid)
 - 모델 성능평가 및 그래프 출력
 
 ### **실행 코드** 
-- 필요한 라이브러리 설치
+a. 필요한 라이브러리 설치
 
-- 데이터 로딩
+b. 데이터 로딩
 
-- Address1(주소1)에 대한 분포도 확인
+c. Address1(주소1)에 대한 분포도 확인
 
 ```python
 # Seaborn을 활용
@@ -454,7 +454,7 @@ plt.show()
 df.drop(df[df['Address1'] == '-'].index, inplace = True)
 ```
 
-- 실주행시간과 평균시속의 분포 확인
+d. 실주행시간과 평균시속의 분포 확인
 
 ```python 
 # Seaborn을 활용
@@ -464,15 +464,15 @@ sns.jointplot(x = "Time_Driving", y = "Speed_Per_Hour", data = df)
 plt.show()
 ```
 
-- 위의 jointplot 그래프에서 시속 300이 넘는 이상치를 발견, jointplot 그래프에서 발견한 이상치 1개를 삭제
+e. 위의 jointplot 그래프에서 시속 300이 넘는 이상치를 발견, jointplot 그래프에서 발견한 이상치 1개를 삭제
 
-- 모델링 성능을 제대로 얻기 위해서 결측치 처리는 필수, 결측치 처리
+f. 모델링 성능을 제대로 얻기 위해서 결측치 처리는 필수, 결측치 처리
 
-- 모델링 성능을 제대로 얻기 위해서 불필요한 변수는 삭제, 불필요 데이터 삭제 처리 
+g. 모델링 성능을 제대로 얻기 위해서 불필요한 변수는 삭제, 불필요 데이터 삭제 처리 
 
-- 원-핫 인코딩(One-hot encoding)은 범주형 변수를 1과 0의 이진형 벡터로 변환하기 위하여 사용하는 방법으로 원-핫 인코딩으로 조건에 해당하는 컬럼 데이터 변환
+h. 원-핫 인코딩(One-hot encoding)은 범주형 변수를 1과 0의 이진형 벡터로 변환하기 위하여 사용하는 방법으로 원-핫 인코딩으로 조건에 해당하는 컬럼 데이터 변환
 
-- 훈련과 검증 각각에 사용할 데이터셋을 분리
+i. 훈련과 검증 각각에 사용할 데이터셋을 분리
 
 ```python
 # Time_Driving(실주행시간) 컬럼을 label값 y로, 나머지 컬럼을 feature값 X로 할당한 후 훈련데이터셋과 검증데이터셋으로 분리
@@ -487,9 +487,9 @@ y = df_preset['Time_Driving']
 X_train, X_valid, y_train, y_valid = train_test_split(x, y, test_size = 0.2, random_state = 42)
 ```
 
-- 머신러닝 모델링 & 모델 성능평가 및 그래프 출력
+j. 머신러닝 모델링 & 모델 성능평가 및 그래프 출력
 
-- 딥러닝 모델링 & 모델 성능평가 및 그래프 출력
+k. 딥러닝 모델링 & 모델 성능평가 및 그래프 출력
 
 ## **Tip**
 - 시험시간은 90분이지만 1시간 내로 완료할 수 있도록 연습해두기 
