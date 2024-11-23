@@ -72,10 +72,12 @@ tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook, Pandas, Deep Learnin
 ![다른 매장과의 판매량 비교](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject6_1_img08.png?raw=true)
 
 **계절별 판매량 추이**
+
 ![계절별 판매량 추이](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject6_1_img09.png?raw=true)
 
 
 **월별 판매량 분석**
+
 ![월별 판매량 분석](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject6_1_img10.png?raw=true)
 
 **시계열 데이터 분해**
@@ -108,12 +110,15 @@ tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook, Pandas, Deep Learnin
 ![방문 고객수와 상품 판매량 추이 비교](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject6_1_img18.png?raw=true)
 
 **요일별 판매량 비교**
+
 ![요일별 판매량 비교](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject6_1_img19.png?raw=true)
 
 **요일별 방문자 수 비교**
+
 ![요일별 방문자 수 비교](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject6_1_img20.png?raw=true)
 
 **계절별 판매량 비교**
+
 ![계절별 판매량 비교](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject6_1_img21.png?raw=true)
 
 **시계열 데이터 분해**
