@@ -1,5 +1,5 @@
 --- 
-title: "5차 미니 프로젝트 | Five Mini Project" 
+title: "6차 미니 프로젝트 (1) | Six Mini Project (1)" 
 date: 2024-11-23 13:39:45 +0900
 achieved: 2024-11-12 17:30:00 +0900
 math: true
@@ -7,501 +7,271 @@ categories: [Bootcamp, KT Aivle School]
 tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook, Pandas, Deep Learning, Visual Intelligence, Mini Project]
 ---
 ---------- 	
-> KT 에이블스쿨 5차 미니프로젝트를 수행한 내용 정리한 글입니다. 
+> KT 에이블스쿨 6차 미니프로젝트를 수행한 내용 정리한 글입니다. 
 {: .prompt-info } 
 
 ## **개요**
-KT AICE ASSO 시험 대비 
+시계열데이터 모델링을 통한 상품별 판매량 예측
 
 ## **데이터셋**
-다양한 데이터를 활용하여 실전과 같은 연습으로 AICE ASSO시험 대비 
-- VOC 고객 해지 예측
-- 고객 이탈 여부 예측
-- 네비게이션 도착시간 예측
+- oil_price: 일별 유가 데이터
+- orders: 일별 매장별 고객 방문 수 
+- sales: 판매 정보
+- products: 상품 기본 정보 
+- stores: 매장 기본 정보
 
-## **AICE 자격**
-AICE는 인공지능 능력시험 (AI자격증)으로 인공지능 활용 능력을 평가하는 시험입니다.<br>
-KT가 개발했고 한국경제와 함께 주관합니다.
+## **배경소개 및 비즈니스 상황**
+- 유통 매장에서 상품별 재고문제를 AI 기반 수요량 예측 시스템 개발을 통해 해결 
+    - 44번 매장의 핵심 상품 3개를 선정한 후 선정 후, 수요 예측을 기반한 발주 시스템의 가능성을 검토 
+- 고객사의 주요 매장(ID-44)의 핵심 상품에 대한 수요량을 예측하고 재고를 최적화 
+    - 매일 저녁 9시 당일 판매가 마감된 후, 상품별 리드타임에 맞게 판매량 예측
 
-### **AICE 자격 종류**
-초등학생부터 성인까지, 비전공자부터 전문 개발자까지 생애주기별 필요한 AI 역량에 따라 5개의 level로 구성되어 있습니다. 
-![image](https://github.com/user-attachments/assets/7b7cb0de-bc6b-48c8-b345-1420625e32b6)
+## **데이터 탐색**
+### **전체 데이터 확인**
 
-#### **AICE Associate** 
-AI 기술에 대한 기본 지식과 실무 적용 능력을 평가합니다. 이 자격은 AI 기초 학습자부터 AI를 활용한 비즈니스 혁신을 목표로 하는 실무자에게 적합하며, AI를 활용한 데이터 분석, 머신러닝, 딥러닝의 기본 개념과 응용 능력을 검증합니다.
+**대상 매장(44)의 방문자 추이**
+![방문자 추이](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject6_1_img01.png?raw=true)
 
-## **VOC 고객 해지 예측**
-고객의 VOC 정보를 바탕으로 해지 여부 예측하기
+**상품(3, 12, 42) 판매량 추이**
+![상품별 판매량 추이](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject6_1_img02.png?raw=true)
 
-- 탐색적 데이터 분석: 필요한 라이브러리 설치 / Tabular 데이터 로딩 / 데이터의 구성 확인, 상관분석 / 데이터 시각화
-- 데이터 전처리: 데이터 결측치 처리 / 라벨 인코딩, 원핫 인코딩 / x,y 데이터 분리 / 데이터 정규분포화, 표준화
-- 머신러닝/딥러닝 모델링
-- 모델 성능평가 및 그래프 출력
+**요일별 전체 판매량 비교**
+![요일별 판매량 비교](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject6_1_img03.png?raw=true)
 
-### **실행 코드** 
-a. 필요한 라이브러리 설치
+**월별 전체 판매량 비교**
 
-```python
-# pip 이용해서 seaborn을 설치
-!pip install seaborn
+![월별 전체 판매량 비교](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject6_1_img12.png?raw=true)
 
-# numpy 별칭을 np로, pandas 별칭을 pd로 해서 임포트
-import numpy as np
-import pandas as pd
+#### **인사이트 도출**
+- 전체적으로 12번 상품이 제일 판매되고 42번 상품이 가장 적게 판매된 걸 확인할 수 있다. 
+- 일요일이 평균적으로 판매량이 제일 많다.
+    - 판매량 순서: 일요일 > 토요일 > 월요일 > 금요일 > 화요일 > 수요일 > 목요일 
+- 월별 판매량은 12월, 11월, 10월, 9월 순으로 연말에 높고 6월, 5월, 3월, 4월 순으로 낮은 걸 보인다.
+    - 미국은 집에서 파티하는 문화가 있고 블랙프라이데이와 같은 연말 할인행사가 크게 작용하는 것으로 보임
+    - 연말에 카드실적을 채우고자 방문한다고 생각
+- 방문자가 늘면 판매량도 늘어났다. 
+    - 미국은 택배 문화가 엄청 발달하지도, 2014 ~ 2017년이면 더 그럴 것으로 판단
 
-# matplotlib 라이브러리를 plt로, seaborn을 sns로 해서 임포트
-import matplotlib.pyplot as plt
-import seaborn as sns
-```
+### **3번 상품 패턴 확인** 
 
-b. 데이터 로딩
+**년도별 판매량 추이**
+![년도별 판매량 추이](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject6_1_img04.png?raw=true)
 
-```python
-# pandas read_csv 함수를 사용하여 voc_data.csv 파일을 읽어온 후 df에 저장
-df = pd.read_csv('voc_data.csv')
-```
+**동일 카테고리의 상품별 판매량 추이**
+![동일 카테고리의 상품](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject6_1_img15.png?raw=true)
+![동일 카테고리의 상품별 판매량](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject6_1_img05.png?raw=true)
 
-c. 데이터 구성 확인
+**휘발유 가격과 상품 판매량 추이 비교**
+![휘발유 가격과 상품 판매량 추이 비교](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject6_1_img06.png?raw=true)
 
-```python
-# "df" DataFrame 이용해서 읽어들인 파일의 앞부분 5줄, 뒷부분 5줄을 출력
-df.head(5) 
-df.tail(5)
+**방문 고객수와 상품 판매량 추이 비교**
+![방문 고객수와 상품 판매량 추이 비교](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject6_1_img07.png?raw=true)
 
-# 데이터프레임 정보(컬럼정보, Null 여부, 타입) 출력
-df.info()
 
-# 데이터프레임 인덱스 확인
-df.index
+**다른 매장과의 판매량 비교**
+![다른 매장과의 판매량 비교](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject6_1_img08.png?raw=true)
 
-# 데이터프레임 컬럼 확인
-df.columns
+**계절별 판매량 추이**
+![계절별 판매량 추이](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject6_1_img09.png?raw=true)
 
-# 데이터프레임 값(value)을 확인
-df.values
 
-# 데이터프레임의 계산 가능한 값들에 대한 통계치를 확인
-df.describe()
+**월별 판매량 분석**
+![월별 판매량 분석](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject6_1_img10.png?raw=true)
 
-# DataFrame 컬럼 항목에 Null 존재하는지 확인
-df.isnull().sum()
+**시계열 데이터 분해**
+![시계열 데이터 분해](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject6_1_img11.png?raw=true)
 
-# voc_trt_perd_itg_cd 컬럼의 데이터를 확인
-df['voc_trt_perd_itg_cd']
+#### **3번 상품 인사이트 도출**
+3번 상품: 음료 
+- 토요일과 일요일마다 높은 판매량을 보인다.
+- 월별 판매량은 1월, 7월, 9월, 10월, 11월, 12월에 높고 2월, 3월, 4월, 5월, 6월, 8월에 낮다. 
+    - 가을, 겨울에 판매량이 증가하는 경향이 보임
+        - 이 계절에 할로윈과 크리스마스와 같은 행사/연휴가 많아 영향을 준다고 판단
+    - 16년 이후로는 이런 경향이 약해짐
+- 음료는 맥주와 같은 기호품으로 추청된다.
+- 2016년 4월 19일에 가장 높은 판매량을 기록하였다. 
+- 유사하게 높은 판매량을 가지는 같은 카테고리 12번 상품은 여름과 봄에 강세를 보인다.
 
-# voc_trt_perd_itg_cd 컬럼 데이터별 건수를 나열
-df['voc_trt_perd_itg_cd'].value_counts()
-```
+### **12번 상품 패턴 확인**
+**년도별 판매량 추이**
+![년도별 판매량 추이](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject6_1_img13.png?raw=true)
 
-d. 데이터 결측치 처리
+**동일 카테고리의 상품별 판매량 추이**
+![동일 카테고리의 상품별 판매량](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject6_1_img16.png?raw=true)
 
-```python
-# voc_trt_perd_itg_cd 컬럼에서 '_' 값이 차지하는 비율이 50%가 넘는 것을 확인하고, 이 voc_trt_perd_itg_cd 컬럼을 삭제
-underscore_ratio = (df['voc_trt_perd_itg_cd'] == '_').mean()
+![동일 카테고리의 상품별 판매량 추이](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject6_1_img14.png?raw=true)
 
-if underscore_ratio > 0.5:
-    df1 = df.drop(columns=['voc_trt_perd_itg_cd'])
+**휘발유 가격과 상품 판매량 추이 비교**
+![휘발유 가격과 상품 판매량 추이 비교](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject6_1_img17.png?raw=true)
 
-# 'df1' DataFrame에서 '_' 값이 50% 이상되는 나머지 컬럼도 삭제
-cols_to_drop = [col for col in df1.columns if (df1[col] == '_').mean() > 0.5]
+**방문 고객수와 상품 판매량 추이 비교**
+![방문 고객수와 상품 판매량 추이 비교](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject6_1_img18.png?raw=true)
 
-df1 = df1.drop(columns=cols_to_drop)
+**요일별 판매량 비교**
+![요일별 판매량 비교](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject6_1_img19.png?raw=true)
 
-# 'df1' DataFrame의 'cust_clas_itg_cd' 컬럼에 '_' 값이 몇 개 있는지 확인하여 출력
-underscore_count = (df1['cust_clas_itg_cd'] == '_').sum()
+**요일별 방문자 수 비교**
+![요일별 방문자 수 비교](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject6_1_img20.png?raw=true)
 
-print(underscore_count)
+**계절별 판매량 비교**
+![계절별 판매량 비교](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject6_1_img21.png?raw=true)
 
-# df1의 남아있는 '_'값을 null로 변경: DataFrame replace 함수를 사용해서 모든 컬럼에 대해 '_'값을 null로 변경하고 df2에 저장
-df2 = df1.replace('_', np.nan)
+**시계열 데이터 분해**
+![시계열 데이터 분해](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject6_1_img22.png?raw=true)
 
-# df2의 컬럼별 Null 갯수를 확인
-df2.isnull().sum()
+#### **12번 상품 인사이트 도출**
+12번 상품: 우유
+- 우유 판매량이 11월부터 오르기 시작해서 11월 말까지 증가하고 12월부터는 감소하는 경향이 있다. 
+    - 우유의 경우 11월 ~ 1월 증감하는 경향을 보임 
+    - 2016년 3월 ~ 2016년 5월은 잘 모르겠음
+    - 우유의 판매량은 연말에 급감하였다가 다시 회복하는 추세를 보이지만 1월 1일 마트의 휴무일 데이터가 영향을 끼치는 듯 함 
+    - 연말에 제품 주문량을 늘려야할 것으로 판단
+- 동일한 카테고리를 분석해본 결과
+    - 가공식품(prepared) 경우 딱히 경향을 가지고 있지 않음
+    - 냉동식품(frozen)의 경우 다른 달보다 11월 ~ 1월에 증감하는 경향이 있음
+    - 빵의 경우 일정한 패턴을 가지고 있진 않지만 증가하는 추세로 보여짐
+    - 요거트의 경우 패턴을 찾기 힘듦
 
-# df2 데이터프레임 컬럼들의 데이터타입을 확인
-df2.dtypes
+### **42번 상품 패턴 확인**
 
-# df2 데이터프레임에 대해 먼저, 'cust_clas_itg_cd' 컬럼의 최빈값을 확인하는 코드로 확인하고 다음으로, 이 컬럼의 Null 값을 최빈값으로 변경하세요(fillna 함수 사용). 처리된 데이터프레임은 df3에 저장
-mode = df2['cust_clas_itg_cd'].mode()
+**년도별 판매량 추이**
+![년도별 판매량 추이](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject6_1_img23.png?raw=true)
 
-df2['cust_clas_itg_cd'] = df2['cust_clas_itg_cd'].fillna(mode[0])
-df3 = df2.copy()
+**동일 카테고리별 판매량 추이**
+![동일 카테고리별 판매량](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject6_1_img25.png?raw=true)
 
-# df3에 대해 'age_itg_cd'의 null 값을 중앙값(median)으로 변경하고 데이터 타입을 정수(int)로 변경하세요. 데이터 처리 후 데이터프레임을 df4에 저장
-df3['age_itg_cd'] = pd.to_numeric(df3['age_itg_cd'], errors='coerce')
+![동일 카테고리별 판매량 추이](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject6_1_img24.png?raw=true)
 
-median_age = df3['age_itg_cd'].median()
-df3['age_itg_cd'].fillna(median_age, inplace=True)
-df3['age_itg_cd'] = df3['age_itg_cd'].astype(int)
+**휘발유 가격과 상품 판매량 추이 비교**
+![휘발유 가격과 상품 판매량 추이 비교](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject6_1_img26.png?raw=true)
 
-df4 = df3.copy()
+**방문 고객수와 상품 판매량 추이 비교**
+![방문 고객수와 상품 판매량 추이 비교](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject6_1_img27.png?raw=true)
 
-# df4에 대해 'cont_sttus_itg_cd'의 null 값을 최빈값(mode)으로 변경하세요. 데이터 처리 후 데이터프레임을 df5에 저장
-mode = df4['cont_sttus_itg_cd'].mode()
-df4['cont_sttus_itg_cd'] = df4['cont_sttus_itg_cd'].fillna(mode)
-df5 = df4[:]
+**원본과 MA 활용하여 비교**
+![원본과 MA 활용하여 비교](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject6_1_img28.png?raw=true)
 
-# df5에 대해 'cust_dtl_ctg_itg_cd'의 null 값을 최빈값(mode)으로 변경
-mode = df5['cust_clas_itg_cd'].mode()
-df5['cust_dtl_ctg_itg_cd'] = df5['cust_dtl_ctg_itg_cd'].fillna(mode)
+- MA: 일정 기간 동안의 평균값을 계산하여 데이터를 평활화 (이동평균)
+- MA(이동평균)를 활용해서 그린 것이 추세를 보기에 더 좋아보인다.
 
-# df5에 대해 다음 날짜 관련 컬럼을 확인 후 삭제 (날짜 관련 컬럼: new_date, opn_nfl_chg_date, cont_fns_pam_date)
-date_cols = ['new_date', 'opn_nfl_chg_date', 'cont_fns_pam_date']
-print(df5[date_cols])
-df5.drop(columns=date_cols, axis=1, inplace=True)
+**트렌드 분석**
+![트렌드 분석](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject6_1_img29.png?raw=true)
 
-# df5에 대해 'voc_mis_pbls_yn' 컬럼을 삭제
-df5.drop('voc_mis_pbls_yn', axis=1, inplace=True)
-```
+**요일별 변화량 비교**
+![요일별 변화량 비교](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject6_1_img30.png?raw=true)
 
-e. 라벨 인코딩, 원핫 인코딩
+**시계열 데이터 분해**
+![시계열 데이터 분해](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject6_1_img31.png?raw=true)
 
-```python
-# df5에 대해 object 타입 컬럼을 cat_cols에 저장하세요. 그 중 cat_cols의 cust_clas_itg_cd 컬럼에 대해 LabelEncoder를 적용 (적용 후 df5에 저장)
-from sklearn.preprocessing import LabelEncoder
+#### **42번 상품 인사이트 도출**
+42번 상품: 농작물
+- 매년 비슷한 패턴 가진다. 
+    - 1월부터 7월까지 증가, 8월 말부터 9월로 갈수록 천천히 떨어지는 경향을 보임
+- 1월 1일은 방문 고객 수가 0명으로 42번을 제외하고 Qty가 전부 0이다.
+    - Minnesota를 확인해본 결과, 농업이 발달한 도시
+        - 많은 주민들이 농업에 종사하며 긴 겨울과 짧은 여름의 계절성을 뜀
+        - (가정) k-mart랑 협업해서 지역의 농업을 지원해주는 목적으로 공휴업에도 농업판매량이 기록된다고 가정할 수 있음
+- 같은 카테고리끼리의 관계를 찾기가 힘들어보인다.
+- 유가와 농산물 사이의 관계가 있다고 보기 힘들다.
+- 방문 고객수와 식료품 판매량은 큰 관계가 없는 것으로 보인다. 
+- 가격의 변화가 월요일부터 점점 커지는 것을 확인할 수 있다. 
+    - 월요일에 가격이 많이 떨어지는 것을 확인 가능
+    - 월요일에만 하락이 있고 다른 요일에는 하락이 없는 거 확인 가능 
 
-cat_cols = list(df5.select_dtypes('object').columns)
+## **데이터 전처리**
+도출된 인사이트를 토대로 필요한 변수 추가 및 불필요한 변수 삭제
 
-encoder = LabelEncoder()
-df5['cust_clas_itg_cd'] = encoder.fit_transform(df5['cust_clas_itg_cd'])
+![데이터 전처리](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject6_1_img33.png?raw=true)
 
-# df5의 나머지 object 컬럼에 대해서 One-Hot Encoding될수 있도록 Pandas의 get_dummies 함수를 적용 (적용 후 df6에 저장)
-df6 = pd.get_dummies(df5, drop_first=True)
-```
-
-f. x, y 데이터 분리
-
-```python
-# df6에 대해 X, y 값을 가지고 8:2 비율로 Train , Test Dataset으로 나누기 (y 클래스 비율에 맞게 분리, y 값은 'trm_yn_Y' 컬럼, random_state는 42)
-from sklearn.model_selection import train_test_split
-
-target = 'trm_yn_Y'
-y = df6[target]
-X = df6.drop(target, axis=1)
-
-train_X, test_X, train_y, test_y = train_test_split(X, y, train_size=.8, stratify=y, random_state=42)
-```
-
-g. 데이터 정규분포화, 표준화
-
-```python
-# 사이킷런의 StandardScaler로 훈련데이터셋은 정규분포화(fit_transform)하고 테스트 데이터셋은 표준화(transform)
-from sklearn.preprocessing import StandardScaler
-
-scaler = StandardScaler()
-train_X_s = scaler.fit_transform(train_X)
-test_X_s = scaler.transform(test_X)
-```
-
-h. 머신러닝 모델링 & 모델 성능평가 및 그래프 출력
 
 ```python
-# LogisticRegression 모델을 만들고 학습을 진행 (단, 규제강도C는 10으로 설정, 계산에 사용할 작업수 max_iter는 2000으로 설정하세요)
-from sklearn.linear_model import LogisticRegression
+ def data_compose(id):
+    df = sales.loc[(sales['Store_ID'] == 44) & (sales['Product_ID'] == id)]
+    df = df.merge(orders, how='left', on=['Date', 'Store_ID'])
+    df = df.drop(['Store_ID', 'Product_ID'], axis = 1)
 
-model_lr = LogisticRegression(C=10, max_iter=2000)
-model_lr.fit(train_X_s, train_y)
+    df['CustomerCount'] = df['CustomerCount'].fillna(0)
 
-# 위 모델의 성능을 평가
-# y값을 예측하여 confusion matrix를 구하고 heatmap 그래프로 시각화
-# Scikit-learn의 classification_report를 활용하여 성능을 출력
-from sklearn.metrics import confusion_matrix, classification_report
+    df['Qty_RM7'] = df['Qty'].rolling(7, min_periods=1).mean()
 
-pred_y = model_lr.predict(test_X_s)
-sns.heatmap(confusion_matrix(pred_y, test_y), annot=True)
-plt.show()
+    df['Qty_RM14'] = df['Qty'].rolling(14, min_periods=1).mean()
 
-print(classification_report(pred_y, test_y))
+    df['Customer_RM7'] = df['CustomerCount'].rolling(7, min_periods=1).mean()
 
-# DecisionTree 모델을 만들고 학습을 진행 (단, max_depth는 10, random_state는 42로 설정)
-from sklearn.tree import DecisionTreeClassifier
+    df['Customer_RM14'] = df['CustomerCount'].rolling(14, min_periods=1).mean()
 
-model_dt = DecisionTreeClassifier(max_depth=10, random_state=42)
-model_dt.fit(train_X_s, train_y)
+    # 이틀 후(예측일)의 1주일 전 Qty와 CC
+    df['Qty_before_5d'] = df['Qty'].shift(5)
+    df['Qty_before_5d'] = df['Qty_before_5d'].fillna(df['Qty'])
 
-# RandomForest 모델을 만들고 학습을 진행 (단, n_estimators=100, random_state=42 설정)
-from sklearn.ensemble import RandomForestClassifier
+    df['Customer_before_5d'] = df['CustomerCount'].shift(5)
+    df['Customer_before_5d'] = df['Customer_before_5d'].fillna(df['CustomerCount'])
 
-model_rf = RandomForestClassifier(n_estimators=100, random_state=42)
-model_rf.fit(train_X_s, train_y)
+    df['Qty_before_7d'] = df['Qty'].shift(7)
+    df['Qty_before_7d'] = df['Qty_before_7d'].fillna(df['Qty'])
 
-# XGBoost 모델을 만들고 학습을 진행 (단, n_estimators=5 설정)
-from xgboost import XGBClassifier
+    df['Customer_before_7d'] = df['CustomerCount'].shift(7)
+    df['Customer_before_7d'] = df['Customer_before_7d'].fillna(df['CustomerCount'])
 
-model_xgb = XGBClassifier(n_estimators=5)
-model_xgb.fit(train_X_s, train_y)
+    df['Weekend'] = df['Date'].dt.dayofweek.apply(lambda x: 1 if x in [5, 6] else 0)
+    df['Season'] = df['Date'].dt.month.map({1: 'Winter', 2: 'Winter', 3: 'Spring', 4: 'Spring', 5: 'Spring', 6: 'Summer', 7: 'Summer', 8: 'Summer', 9: 'Fall', 10: 'Fall', 11: 'Fall', 12: 'Winter'})
 
-# Light GBM 모델을 만들고 학습을 진행 (단, n_estimators=3 설정)
-from lightgbm import LGBMClassifier
+    df = pd.get_dummies(df, columns=['Season'], drop_first=True)
+    df = df.replace({False: 0, True: 1})
 
-model_lgbm = LGBMClassifier(n_estimators=3)
-model_lgbm.fit(train_X_s, train_y)
+    df['Holiday'] = df['Date'].apply(lambda x: 1 if x.month == 1 and x.day == 1 else 0)
 
-# Linear Regression 모델을 연습으로 만들고 학습을 진행
-x_data = np.array([1.6, 2.3, 3.5, 4.6]).reshape(-1,1)
-y_data = np.array([3.3, 5.5, 7.2, 9.9])
+    df['y'] = df['Qty'].shift(-2)
+    # df['y'] = df['y'].fillna(method='bfill')
 
-from sklearn.linear_model import LinearRegression
+    df = df.iloc[:-2]
 
-model = LinearRegression()
-model.fit(x_data, y_data)
+    df = df.set_index('Date')
+
+    return df
 ```
 
-i. 딥러닝 모델링 & 모델 성능 평가 및 그래프 출력
-
-```python
-# 해지여부를 분류하는 딥러닝 모델
-import tensorflow as tf
-
-il = tf.keras.layers.Input(shape=train_X.shape[1:])
-hl = tf.keras.layers.Dense(64, activation='relu')(il)
-hl = tf.keras.layers.Dropout(.2)(hl)
-hl = tf.keras.layers.BatchNormalization()(hl)
-
-hl = tf.keras.layers.Dense(32, activation='relu')(hl)
-hl = tf.keras.layers.Dropout(.2)(hl)
-hl = tf.keras.layers.BatchNormalization()(hl)
-
-hl = tf.keras.layers.Dense(16, activation='relu')(hl)
-hl = tf.keras.layers.Dropout(.2)(hl)
-hl = tf.keras.layers.BatchNormalization()(hl)
-
-ol = tf.keras.layers.Dense(1, activation='sigmoid')(hl)
-
-model = tf.keras.Model(il, ol)
-
-model.summary()
-
-
-es = tf.keras.callbacks.EarlyStopping(monitor='val_loss', patience=5)
-mc = tf.keras.callbacks.ModelCheckpoint('best_model.keras', monitor='val_loss', save_best_only=True)
-
-model.compile(optimizer='adam', loss=tf.keras.metrics.binary_crossentropy, metrics=['acc'])
-history = model.fit(train_X_s, train_y,
-                    epochs=10, batch_size=10,
-                    validation_data=(test_X_s, test_y),
-                    callbacks=[es, mc])
-
-# y_train, y_test를 원핫 인코딩 후 다중 분류하는 딥러닝 모델
-from tensorflow.keras.utils import to_categorical
-
-one_train_y = to_categorical(train_y)
-one_test_y = to_categorical(test_y)
-
-il = tf.keras.layers.Input(shape=train_X.shape[1:])
-hl = tf.keras.layers.Dense(64, activation='relu')(il)
-hl = tf.keras.layers.Dropout(.2)(hl)
-hl = tf.keras.layers.BatchNormalization()(hl)
-
-hl = tf.keras.layers.Dense(32, activation='relu')(hl)
-hl = tf.keras.layers.Dropout(.2)(hl)
-hl = tf.keras.layers.BatchNormalization()(hl)
-
-hl = tf.keras.layers.Dense(16, activation='relu')(hl)
-hl = tf.keras.layers.Dropout(.2)(hl)
-hl = tf.keras.layers.BatchNormalization()(hl)
-
-ol = tf.keras.layers.Dense(2, activation='softmax')(hl)
-
-model = tf.keras.Model(il, ol)
-
-model.summary()
-
-
-es = tf.keras.callbacks.EarlyStopping(monitor='val_loss', patience=5)
-mc = tf.keras.callbacks.ModelCheckpoint('best_model.keras', monitor='val_loss', save_best_only=True)
-
-model.compile(optimizer='adam', loss=tf.keras.metrics.categorical_crossentropy, metrics=['acc'])
-history = model.fit(train_X_s, one_train_y,
-                    epochs=10, batch_size=10,
-                    validation_data=(test_X_s, one_test_y),
-                    callbacks=[es, mc])
-
-# 모델 성능을 평가해서 그래프로 표현
-# 학습 정확도와 검증정확도를 그래프로 표시하고 xlabel에는 Epochs, ylabel에는 Accuracy, 범례에는 Train과 Validation으로 표시
-result_df = pd.DataFrame(history.history)[['acc', 'val_acc']]
-result_df.columns = ['Train', 'Validation']
-result_df.plot.line()
-plt.xlabel('Epochs')
-plt.ylabel('Accuracy')
-plt.legend()
-plt.show()
-
-# 모델 성능을 평가해서 그래프로 표현
-# 학습 손실과 검증 손실을 그래프로 표시하고 xlabel에는 Epochs, ylabel에는 Loss, 범례에는 Train Loss와 Validation Loss로 표시
-result_df = pd.DataFrame(history.history)[['loss', 'val_loss']]
-result_df.columns = ['Train Loss', 'Validation Loss']
-result_df.plot.line()
-plt.xlabel('Epochs')
-plt.ylabel('Loss')
-plt.legend()
-plt.show()
-
-# y값을 예측하여 y_test_pred에 저장하고 정확도를 출력
-from sklearn.metrics import accuracy_score
-
-pred_y = model.predict(test_X_s)
-accuracy_score(np.argmax(pred_y, axis=1), test_y)
-``` 
-
-## **고객 이탈여부 예측**
-통신 상품 이용정보를 바탕으로 고객의 이탈 여부 예측
-
-- 탐색적 데이터 분석: 필요한 라이브러리 설치 / Tabular 데이터 로딩 / 데이터의 구성 확인, 상관분석 / 데이터 시각화
-- 데이터 전처리: 데이터 결측치 처리 / 라벨 인코딩, 원핫 인코딩 / x,y 데이터 분리 / 데이터 정규분포화, 표준화
-- 머신러닝/딥러닝 모델링
-- 모델 성능평가 및 그래프 출력
-
-### **실행 코드**
-a. 필요한 라이브러리 설치
-
-b. 데이터 로딩
-
-c. df에서 불필요한 customerID 컬럼 삭제하고 df1에 저장
-
-d. df1의 TotalCharges 컬럼의 타입을 float로 변경
-
-```python
-# TotalCharge의 컬럼 타입을 확인하는 코드를 작성
-# ' ' 값을 0으로 변환하고 컬럼 타입을 float로 변경
-# 전처리 후 데이터를 df2에 저장
-df1['TotalCharges'].dtype
-df1['TotalCharges'].replace([' '], ['0'], inplace=True)
-df1['TotalCharges'] = df1['TotalCharges'].astype(float)
-df2=df1.copy()
-```
-
-e. df2에서 churn 컬럼의 데이터별 개수를 확인하는 코드를 작성하고 Yes, No를 각각 1, 0으로 변환한 후 df3에 저장
-
-f. df3의 모든 컬럼에 대해 결측치를 확인하는 코드를 작성하고 결측치를 처리
-
-g. df4에서 SeniorCitizen 컬럼을 bar 차트로 확인해보고 불균형을 확인
-
-```python
-# df4에서 SeniorCitizen 컬럼을 bar 차트로 확인해보고 불균형을 확인
-# SeniorCitizen 컬럼은 불균형이 심하므로 삭제
-df4['SeniorCitizen'].value_counts().plot(kind='bar')
-df4.drop('SeniorCitizen', axis=1, inplace=True)
-df4.info()
-```
-
-h. df4에서 다음의 가이드에 따라 데이터를 시각화
-
-```python
-# tenure (서비스 사용기간)에 대해 히스토그램으로 시각화 
-# tenure를 x 값으로 churn을 hue 값으로 사용하여 kdeplot으로 시각화 하고 '서비스 사용기간이 길어질 수록 이탈이 적다'에 대해 'O'인지 'X'인지 출력
-# 'tenure','MonthlyCharges','TotalCharges' 컬럼간의 상관관계를 확인하여 heatmap으로 시각화하고 가장 높은 상관계수 값을 출력
-
-import seaborn as sns
-import matplotlib.pyplot as plt
-sns.histplot(data=df4, x='tenure')
-plt.show()
-
-sns.kdeplot(data=df4, x='tenure', hue='Churn')
-plt.show()
-print('O')
-
-sns.heatmap(df4[['tenure','MonthlyCharges','TotalCharges']].corr(), annot=True)
-print(0.83)
-```
-
-i. df4에서 컬럼의 데이터 타입이 object인 컬럼들을 원-핫 인코딩
-
-j. df5에 대해 Scikit-learn의 train_test_split 함수로 훈련, 검증 데이터를 분리
-
-k. MinMaxScaler 함수를 'scaler'로 정의하고 데이터를 정규화
-
-```python
-from sklearn.preprocessing import MinMaxScaler
-scaler = MinMaxScaler()
-X_train = scaler.fit_transform(X_train)
-X_valid = scaler.transform(X_valid)
-```
-
-l. 머신러닝 모델링 & 모델 성능평가 및 그래프 출력
-
-m. 딥러닝 모델링 & 모델 성능평가 및 그래프 출력
-
-## **네비게이션 도착시간 예측**
-네비게이션 데이터를 활용한 도착 시간 예측
-
-- 탐색적 데이터 분석: 필요한 라이브러리 설치 / Tabular 데이터 로딩 / 데이터의 구성 확인, 상관분석 / 데이터 시각화
-- 데이터 전처리: 데이터 결측치 처리 / 라벨 인코딩, 원핫 인코딩 / x,y 데이터 분리 / 데이터 정규분포화, 표준화
-- 머신러닝/딥러닝 모델링
-- 모델 성능평가 및 그래프 출력
-
-### **실행 코드** 
-a. 필요한 라이브러리 설치
-
-b. 데이터 로딩
-
-c. Address1(주소1)에 대한 분포도 확인
-
-```python
-# Seaborn을 활용
-# Address1(주소1)에 대해서 분포를 보여주는 countplot그래프 시각화
-# 지역명이 없는 '-'에 해당되는 row(행)을 삭제
-import matplotlib.pyplot as plt
-plt.rcParams['font.family'] ='Malgun Gothic'
-plt.rcParams['axes.unicode_minus'] =False
-
-!pip install seaborn
-import seaborn as sns
-import matplotlib.pyplot as plt
-sns.countplot(x = 'Address1', data = df)
-plt.show()
-
-df.drop(df[df['Address1'] == '-'].index, inplace = True)
-```
-
-d. 실주행시간과 평균시속의 분포 확인
-
-```python 
-# Seaborn을 활용
-# X축에는 Time_Driving(실주행시간)을 표시하고 Y축에는 Speed_Per_Hour(평균시속)을 표시
-
-sns.jointplot(x = "Time_Driving", y = "Speed_Per_Hour", data = df)
-plt.show()
-```
-
-e. 위의 jointplot 그래프에서 시속 300이 넘는 이상치를 발견, jointplot 그래프에서 발견한 이상치 1개를 삭제
-
-f. 모델링 성능을 제대로 얻기 위해서 결측치 처리는 필수, 결측치 처리
-
-g. 모델링 성능을 제대로 얻기 위해서 불필요한 변수는 삭제, 불필요 데이터 삭제 처리 
-
-h. 원-핫 인코딩(One-hot encoding)은 범주형 변수를 1과 0의 이진형 벡터로 변환하기 위하여 사용하는 방법으로 원-핫 인코딩으로 조건에 해당하는 컬럼 데이터 변환
-
-i. 훈련과 검증 각각에 사용할 데이터셋을 분리
-
-```python
-# Time_Driving(실주행시간) 컬럼을 label값 y로, 나머지 컬럼을 feature값 X로 할당한 후 훈련데이터셋과 검증데이터셋으로 분리
-# 대상 데이터프레임: df_preset
-# 훈련 데이터셋 label: y_train, 훈련 데이터셋 Feature: X_train
-# 검증 데이터셋 label: y_valid, 검증 데이터셋 Feature: X_valid
-# 훈련 데이터셋과 검증데이터셋 비율은 80:20, random_state: 42
-# Scikit-learn의 train_test_split 함수를 활용
-from sklearn.model_selection import train_test_split
-x = df_preset.drop(columns = ['Time_Driving'])
-y = df_preset['Time_Driving']
-X_train, X_valid, y_train, y_valid = train_test_split(x, y, test_size = 0.2, random_state = 42)
-```
-
-j. 머신러닝 모델링 & 모델 성능평가 및 그래프 출력
-
-k. 딥러닝 모델링 & 모델 성능평가 및 그래프 출력
-
-## **Tip**
-- 시험시간은 90분이지만 1시간 내로 완료할 수 있도록 연습해두기 
-    - AICE 홈페이지에서 제공하는 샘플 여러번 응시
-- 검색 및 블로그 참고 가능 (GPT 사용 불가)
-    - 인터넷 검색이 가능하므로 아예 모르는 내용이 나오면 빠른 시간 내에 해결하는 연습 필요
-- 머신러닝 및 딥러닝 부분의 배점이 크기 때문에 확실하게 외워두기
-    - 성능을 높이거나 수준 높은 코드를 작성하였는지는 가점 여부 X 
-
-![image](https://github.com/user-attachments/assets/bf23e842-ecf9-4c9c-a1d9-8e8cf9bdd15d)
-![image](https://github.com/user-attachments/assets/66f7a3e0-95c6-4bca-88df-0f2aa9ff0d96)
-
-
-자세한 코드는 [Github](https://github.com/tae2on/KT_aivle_school_AI_track/tree/main/MiniProject05)
-에서 확인할 수 있습니다.
+## **Baseline 모델**
+### **LSTM 구조** 
+![Baseline 모델_LSTM](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject6_1_img32.png?raw=true)
+
+- 3번 상품 / 12번 상품 / 42번 상품에 대한 평가지표
+    - RMSE: 0.098 / 0.056 / 0.106
+    - MAE : 0.071 / 0.046 / 0.084
+    - $R^2$ : 0.53 / 0.55 / 0.34
+    - MAPE : 0.15 / 0.16 / -0.095
+
+### **CNN 구조** 
+![Baseline 모델_CNN](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject6_1_img34.png?raw=true)
+
+- 3번 상품 / 12번 상품 / 42번 상품에 대한 평가지표
+    - RMSE: 0.12 / 0.063 / 0.135
+    - MAE : 0.078 / 0.053 / 0.102
+    - $R^2$ : 0.344 / 0.433 / -0.754
+    - MAPE : 0.15 / 0.2 / 0.371
+
+## **LSTM 모델 튜닝**
+![LSTM 모델 튜닝](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject6_1_img35.png?raw=true)
+
+- 3번 상품 / 12번 상품 / 42번 상품에 대한 평가지표
+    - RMSE: 1904 / 2183 / 10.8
+    - MAE : 1455 / 1735 / 8.53
+    - $R^2$ : 0.73 / 0.51 / 0.49
+    - MAPE : 0.13 / 0.15 / 0.09
+
+## **최종결과**
+![최종결과](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject6_1_img36.png?raw=true)
+
+![최종결과](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject6_1_img37.png?raw=true)
+
+- 3번 상품 / 12번 상품 / 42번 상품
+    - 일평균 재고량 : 7827 / 7325 / 68
+    - 일평균 재고 금액 : 7827381 / 7325810 / 68819
+    - 일평균 재고회전율: 1.392 / 1.423 / 1.604
+    - 기회손실 수량 : -45912 / -35149 / -132
+    
+튜닝한 모델의 예측 그래프를 살펴보니 어느정도 성능이 보장된 것 같지만 실제 데이터와 확인해보니 성능이 잘 나오지 않았습니다. 
+
+## **고찰**
+팀원들과 전처리 방식을 거의 비슷하게 맞춰서 하였는데 서로 다른 전처리 방식을 통해 데이터셋을 구축하였다면 상품들의 특징과 연관성을 보다 다양하게 도출할 수 있었을 것 같아서 아쉬움이 남습니다. <br>
+처음 미니프로젝트에 비해 가면갈수록 더 어렵다는 느낌이 확 다가왔던 미니 프로젝트였던 것 같습니다. 막히는 부분을 팀원들이 잘 알려줘서 이번 미니 프로젝트도 잘 끝낼 수 있었던 것 같습니다. 
