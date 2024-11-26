@@ -1,14 +1,13 @@
---- 
-title: "IT 인프라 | IT Infrastructure" 
+---
+title: "IT 인프라 | IT Infrastructure"
 date: 2024-11-26 01:18:24 +0900
 achieved: 2024-11-25 17:30:00 +0900
 math: true
 categories: [Bootcamp, KT Aivle School]
 tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook, IT Infrastructure]
 ---
-----------
-> KT 에이블스쿨 6기 IT 인프라에 진행한 강의 내용 정리한 글입니다. 
-{: .prompt-info } 
+> KT 에이블스쿨 6기 IT 인프라에 진행한 강의 내용 정리한 글입니다.
+{: .prompt-info }
 
 ## **서버와 클라이언트**
 - 서버(Server)
