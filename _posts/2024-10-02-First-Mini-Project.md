@@ -20,7 +20,7 @@ tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook, Pandas, Analysis, Mi
 - 서울시 주민 등록 데이터 
 - 서울시 구별 등록 업종 상위 10개 데이터 
 
-## **개인과제 - 데이터 분석 및 인사이트 도출**
+## **개인과제**
 도메인 이해 및 데이터 분석을 통한 인사이트 도출
 ### **구별 버스정류장 분석** 
 ![정류장수와 승차총승객수의 관계](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/bus_stop_passenger.jpg?raw=true)
@@ -61,7 +61,7 @@ tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook, Pandas, Analysis, Mi
 - 강남구에 모든 업종들이 높은 수치를 띄고 있는 것을 볼 수 있습니다. 
 - 노원구, 양천구만 일반 교과 학원이 한식 일반 음식점업보다 높은 수치가 나타나는 것으로 보아 이 자치구에 학생들이 많이 포진되어 있을 것으로 예상됩니다. 
 
-## **팀과제: 데이터 분석 및 인사이트 도출** 
+## **팀과제** 
 개인과제의 데이터 분석을 바탕으로 팀원들과 가설을 세워 가설을 검정하고 결론 도출
 ### **가설 수립**
 가설1: 인구 수가 많을수록 노선 수가 많을 것이다. <br>
