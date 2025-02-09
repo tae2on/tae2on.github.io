@@ -20,6 +20,7 @@ tags: [Certification, KT Aivle School, python, Jupyter Notebook, Aice Associate]
     ```python
     import sklearn as sk
     ```
+<br>
 
 2. Pandas는 데이터 분석을 위해 널리 사용되는 파이썬 라이브러리입니다. Pandas를 사용할 수 있도록 별칭(alias)을 pd로 해서 불러오세요.
 
@@ -28,6 +29,7 @@ tags: [Certification, KT Aivle School, python, Jupyter Notebook, Aice Associate]
     # import numpy as np
     # import seaborn as sns
     ```
+<br>
 
 3. 모델링을 위해 분석 및 처리할 데이터 파일을 읽어오려고 합니다. Pandas함수로 2개 데이터 파일을 읽고 합쳐서 1개의 데이터프레임 변수명 df에 할당하는 코드를 작성하세요.
     - A0007IT.json 파일을 읽어 데이터 프레임 변수명 df_a에 할당하세요.
@@ -41,6 +43,7 @@ tags: [Certification, KT Aivle School, python, Jupyter Notebook, Aice Associate]
     df_b = pd.read_csv('./signal.csv')
     df = pd.merge(df_a, df_b, on='RID', how='inner')
     ```
+<br>
 
 4. Address1(주소1)에 대한 분포도를 알아 보려고 합니다. Address1(주소1)에 대해 countplot그래프로 만드는 코드와 답안을 작성하세요.
     - Seaborn을 활용하세요.
@@ -59,6 +62,7 @@ tags: [Certification, KT Aivle School, python, Jupyter Notebook, Aice Associate]
     df = df[df['Address1'] != '-']
     답안04 = 3
     ```    
+<br>
 
 5. 실주행시간과 평균시속의 분포를 같이 확인하려고 합니다. Time_Driving(실주행시간)과 Speed_Per_Hour(평균시속)을 jointplot그래프로 만드세요.
     - Seaborn을 활용하세요.
@@ -68,6 +72,7 @@ tags: [Certification, KT Aivle School, python, Jupyter Notebook, Aice Associate]
     sns.jointplot(data=df, x='Time_Driving', y='Speed_Per_Hour')
     plt.show()
     ```
+<br>
 
 6. 위의 jointplot 그래프에서 시속 300이 넘는 이상치를 발견할 수 있습니다. 가이드에 따라서 전처리를 수행하고 저장하세요.
     - 대상 데이터프레임: df
@@ -81,6 +86,7 @@ tags: [Certification, KT Aivle School, python, Jupyter Notebook, Aice Associate]
     df_temp = df_temp.drop(['RID'], axis=1)
     df_temp.info()
     ```
+<br>
 
 7. 모델링 성능을 제대로 얻기 위해서는 결측치 처리는 필수입니다. 아래 가이드를 따라 결측치 처리하세요. 
     - 대상 데이터프레임: df_temp
@@ -94,6 +100,7 @@ tags: [Certification, KT Aivle School, python, Jupyter Notebook, Aice Associate]
     df_na = df_temp.dropna(axis=0)
     답안07 = 2
     ```
+<br>
 
 8. 모델링 성능을 제대로 얻기 위해서 불필요한 변수는 삭제해야 합니다. 아래 가이드를 따라 불필요 데이터를 삭제 처리하세요.
     - 대상 데이터프레임: df_na
@@ -103,6 +110,7 @@ tags: [Certification, KT Aivle School, python, Jupyter Notebook, Aice Associate]
     ```python
     df_del = df_na.drop(['Time_Departure', 'Time_Arrival'], axis=1)
     ```
+<br>
 
 9. 원-핫 인코딩(One-hot encoding)은 범주형 변수를 1과 0의 이진형 벡터로 변환하기 위하여 사용하는 방법입니다. 원-핫 인코딩으로 아래 조건에 해당하는 컬럼 데이터를 변환하세요.
     - 대상 데이터프레임: df_del
@@ -114,6 +122,7 @@ tags: [Certification, KT Aivle School, python, Jupyter Notebook, Aice Associate]
     cols = df_del.select_dtypes('object').columns
     df_preset = pd.get_dummies(data=df_del, columns=cols)
     ```
+<br>
 
 10. 훈련과 검증 각각에 사용할 데이터셋을 분리하려고 합니다. Time_Driving(실주행시간) 컬럼을 label값 y로, 나머지 컬럼을 feature값 y로, 나머지 컬럼을 feature값 X로 할당한 후 훈련데이터셋과 검증데이터셋으로 분리하세요. 추가로 가이드 따라서 훈련데이터셋과 검증데이터셋에 스케일링을 수행하세요.
     - 대상 데이터프레임: df_preset
@@ -144,6 +153,7 @@ tags: [Certification, KT Aivle School, python, Jupyter Notebook, Aice Associate]
     X_train = pd.DataFrame(X_train_robust, index=X_train.index, columns=X_train.columns)
     X_test = pd.DataFrame(X_test_robust, index=X_valid.index, columns=X_valid.columns)
     ```
+<br>
 
 11. Time_Driving(실주행시간)을 예측하는 머신러닝 모델을 만들려고 합니다. 의사결정나무(decision tree)와 랜덤포레스트(RandomForest)는 여러 가지 규칙을 순차적으로 적용하면서 독립 변수 공간을 분할하는 모형으로 분류(classification)와 회귀 분석(regression)에 모두 사용될 수 있습니다. 아래 가이드에 따라 의사결정나무(decision tree)와 랜덤포레스트(RandomForest) 모델 만들고 학습을 진행하세요.
     - 의사결정나무(decision tree)
@@ -168,6 +178,7 @@ tags: [Certification, KT Aivle School, python, Jupyter Notebook, Aice Associate]
     rf = RandomForestRegressor(max_depth=5, min_samples_split=3, random_state=120)
     rf.fit(X_train, y_train)
     ```
+<br>
 
 12. 위 의사결정나무(decision tree)와 랜덤포레스트(RandomForest) 모델의 성능을 평가하려고 합니다. 아래 가이드에 따라 예측 결과의 mae(Mean Absolute Error)를 구하고 평가하세요.
     - 성능 평가는 검증 데이터셋을 활용하세요.
@@ -192,6 +203,7 @@ tags: [Certification, KT Aivle School, python, Jupyter Notebook, Aice Associate]
     답안12 = 'randomforest'
     print(답안12)
     ```
+<br>
 
 13. Time_Driving(실주행시간)을 예측하는 딥러닝 모델을 만들려고 합니다. 아래 가이드에 따라 모델링하고 학습을 진행하세요.
     - Tensorflow framework를 사용하여 딥러닝 모델을 만드세요.
@@ -211,6 +223,7 @@ tags: [Certification, KT Aivle School, python, Jupyter Notebook, Aice Associate]
    model.compile(optimizer='adam', loss='mse', metrics='mse')
    history = model.fit(X_train, y_train, epochs=30, batch_size=16, validation_data=(X_valid, y_valid))
     ```
+<br>
 
 14. 위 딥러닝 모델의 성능을 평가하려고 합니다. Matplotlib 라이브러리 활용해서 학습 mse와 검증 mse를 그래프로 표시하세요.
     - 1개의 그래프에 학습 mse과 검증 mse 2가지를 모두 표시하세요.
