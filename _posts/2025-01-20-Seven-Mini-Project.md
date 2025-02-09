@@ -4,7 +4,7 @@ date: 2025-01-20 11:10:45 +0900
 achieved: 2024-12-24 17:30:00 +0900
 math: true
 categories: [Bootcamp, KT Aivle School]
-tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook, Mini Project, Front-end, Back-end]
+tags: [Bootcamp, KT Aivle School, Java, IntelliJ IDEA, Mini Project, Front-end, Back-end]
 ---
 ---------- 	
 > KT 에이블스쿨 7차 미니프로젝트를 수행한 내용 정리한 글입니다. 
