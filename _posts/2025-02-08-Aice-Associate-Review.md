@@ -7,7 +7,7 @@ categories: [Certification, Aice Associate]
 tags: [Certification, KT Aivle School, python, Jupyter Notebook, Aice Associate]
 ---
 ---------- 	
-> Aice Associate 합격 후기 정리한 글입니다. 
+> Aice Associate 합격 후기글입니다. 
 {: .prompt-info } 
 
 ## **Aice Associate 시험 소개**
