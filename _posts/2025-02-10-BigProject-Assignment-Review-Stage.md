@@ -27,7 +27,7 @@ tags: [Bootcamp, KT Aivle School, Big Project, Assignment Review Stage]
 ## **주제 선정**
 프로젝트 주제를 선정할 때는 선정배경, 주요 서비스 내용(주요기능, 기술 포함), 타겟층(목표고객), 활용데이터(링크 찾은 경우 포함), 기대효과를 종합적으로 고려하여 정하였습니다. 그 이후 고도화를 진행하였습니다. 
 
-![주제 선정](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/miniproject7_img01.png?raw=true)
+![주제 선정](https://raw.githubusercontent.com/tae2on/tae2on.github.io/3f29cfc2ef62db6a17521a72a12ebfb2130fae28/assets/img/%EC%A3%BC%EC%A0%9C%20%EC%84%A0%EC%A0%95.png)
 
 노션, 팀즈 등 다양한 협업 도구를 활용하여 여러 주제를 검토한 결과, 도서 요약 및 웹툰화를 통한 광고 제작을 최종 주제로 선정하였습니다.
 
