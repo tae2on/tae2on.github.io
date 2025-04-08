@@ -4,7 +4,7 @@ date: 2025-02-10 17:30:45 +0900
 achieved: 2025-01-10 18:00:2 +0900
 math: true
 categories: [Bootcamp, KT Aivle School]
-tags: [Bootcamp, KT Aivle School, Big Project, Assignment Review Stage]
+tags: [Bootcamp, KT Aivle School, Big Project]
 ---
 ---------- 	
 > KT 에이블스쿨 빅프로젝트 과제 심의 단계(12.30 ~ 1.10)에 대한 글입니다. 
