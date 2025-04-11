@@ -221,3 +221,7 @@ jekyll-archives:
   permalinks:
     tag: /tags/:name/
     category: /categories/:name/
+
+# ads.txt 추가 
+include:
+  - ads.txt
