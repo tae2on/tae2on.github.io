@@ -1,6 +1,7 @@
 --- 
 title: "컴퓨터 구조의 발전: 폰 노이만 구조와 하버드 구조 비교"
 date: 2025-04-28 18:58:45 +0900
+achieved: 2025-04-26 21:05:02 +0900
 math: true
 categories: [CS, Computer Architecture]
 tags: [CS, Computer Architecture, 폰 노이만 구조, 하버드 구조]
