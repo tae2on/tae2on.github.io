@@ -2,8 +2,8 @@
 title: "컴퓨터 구조의 발전: 폰 노이만 구조와 하버드 구조 비교"
 date: 2025-04-28 18:58:45 +0900
 math: true
-categories: [CS, 컴퓨터 구조]
-tags: [CS, 컴퓨터 구조, 폰 노이만 구조, 하버드 구조]
+categories: [CS, Computer Architecture]
+tags: [CS, Computer Architecture, 폰 노이만 구조, 하버드 구조]
 ---
 ---------- 	
 > 컴퓨터 구조는 컴퓨터 시스템의 기본적인 구조와 동작원리를 배우는 이론입니다. 
