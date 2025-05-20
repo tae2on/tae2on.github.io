@@ -1,7 +1,6 @@
 ---
 title: "시각지능 딥러닝 | Visual Intelligence Deep Learning" 
-date: 2024-10-27 12:13:24 +0900
-achieved: 2024-10-25 17:30:00 +0900
+date: 2024-10-25 17:30:00 +0900
 math: true
 categories: [Bootcamp, KT Aivle School]
 tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook, Pandas, Deep Learning, Visual Intelligence]

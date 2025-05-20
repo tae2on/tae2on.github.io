@@ -1,7 +1,6 @@
 ---
 title: "가상화 클라우드 | Virtualized Cloud" 
-date: 2024-12-16 23:52:24 +0900
-achieved: 2024-12-09 17:30:00 +0900
+date: 2024-12-09 17:30:00 +0900
 math: true
 categories: [Bootcamp, KT Aivle School]
 tags: [Bootcamp, KT Aivle School, Virtualized Cloud, Azure]

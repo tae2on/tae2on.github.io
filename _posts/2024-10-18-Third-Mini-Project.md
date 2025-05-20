@@ -1,7 +1,6 @@
 --- 
 title: "3차 미니 프로젝트 | Third Mini Project" 
-date: 2024-10-21 18:25:45 +0900
-achieved: 2024-10-18 17:30:00 +0900
+date: 2024-10-18 17:30:00 +0900
 math: true
 categories: [Bootcamp, KT Aivle School]
 tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook, Pandas, Deep Learning, Mini Project]

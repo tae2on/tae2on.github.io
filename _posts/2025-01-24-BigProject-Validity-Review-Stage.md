@@ -1,7 +1,6 @@
 --- 
 title: "빅프로젝트 | 타당성 검토 단계" 
 date: 2025-01-24 18:00:2 +0900
-achieved: 2025-01-24 18:00:2 +0900
 math: true
 categories: [Bootcamp, KT Aivle School]
 tags: [Bootcamp, KT Aivle School, Big Project]

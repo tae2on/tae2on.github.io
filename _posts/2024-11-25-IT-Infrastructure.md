@@ -1,7 +1,6 @@
 ---
 title: "IT 인프라 | IT Infrastructure"
-date: 2024-11-26 01:18:24 +0900
-achieved: 2024-11-25 17:30:00 +0900
+date: 2024-11-25 17:30:00 +0900
 math: true
 categories: [Bootcamp, KT Aivle School]
 tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook, IT Infrastructure]
