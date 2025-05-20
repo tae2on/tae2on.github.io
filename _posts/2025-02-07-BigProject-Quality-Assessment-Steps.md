@@ -1,7 +1,6 @@
 --- 
 title: "빅프로젝트 | 품질 평가 단계" 
-date: 2025-04-12 17:30:45 +0900
-achieved: 2025-02-07 18:00:2 +0900
+date: 2025-02-07 18:00:2 +0900
 math: true
 categories: [Bootcamp, KT Aivle School]
 tags: [Bootcamp, KT Aivle School, Big Project]

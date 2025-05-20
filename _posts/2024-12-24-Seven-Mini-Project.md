@@ -1,7 +1,6 @@
 --- 
 title: "7차 미니 프로젝트 | Seven Mini Project" 
-date: 2025-01-20 11:10:45 +0900
-achieved: 2024-12-24 17:30:00 +0900
+date: 2024-12-24 17:30:00 +0900
 math: true
 categories: [Bootcamp, KT Aivle School]
 tags: [Bootcamp, KT Aivle School, Java, IntelliJ IDEA, Mini Project, Front-end, Back-end]

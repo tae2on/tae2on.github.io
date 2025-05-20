@@ -1,7 +1,6 @@
 --- 
 title: "머신러닝 | Machine Learning" 
-date: 2024-10-05 00:53:23 +0900
-achieved: 2024-10-04 17:30:00 +0900
+date: 2024-10-04 17:30:00 +0900
 math: true
 categories: [Bootcamp, KT Aivle School]
 tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook, Pandas, Machine Learning]

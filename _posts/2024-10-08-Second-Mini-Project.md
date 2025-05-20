@@ -1,7 +1,6 @@
 --- 
 title: "2차 미니 프로젝트 | Second Mini Project" 
-date: 2024-10-09 15:17:45 +0900
-achieved: 2024-10-08 17:30:00 +0900
+date: 2024-10-08 17:30:00 +0900
 math: true
 categories: [Bootcamp, KT Aivle School]
 tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook, Pandas, Processing, Machine Learning, Mini Project]

@@ -1,7 +1,6 @@
 --- 
 title: "컴퓨터 구성요소: 하드웨어와 소프트웨어" 
 date: 2025-04-26 21:05:45 +0900
-achieved: 2025-04-26 21:05:02 +0900
 math: true
 categories: [CS, Computer Architecture]
 tags: [CS, Computer Architecture]

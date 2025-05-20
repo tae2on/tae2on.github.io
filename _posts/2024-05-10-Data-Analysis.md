@@ -1,7 +1,6 @@
 ---
 title: "3과목 | 데이터 분석"
-date: 2024-10-11 18:36:45 +0900
-achieved: 2024-05-10 12:00:00 +0900
+date: 2024-05-10 12:00:00 +0900
 math: true
 categories: [Certification, ADsP]
 tags: [Certification, ADsP]	

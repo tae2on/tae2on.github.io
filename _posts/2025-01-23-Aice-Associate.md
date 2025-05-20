@@ -1,7 +1,6 @@
 --- 
 title: "Aice Associate 기출문제 풀이" 
-date: 2025-01-23 20:46:45 +0900
-achieved: 2025-01-23 19:48:27 +0900
+date: 2025-01-23 19:48:27 +0900
 math: true
 categories: [Certification, Aice Associate]
 tags: [Certification, KT Aivle School, python, Jupyter Notebook, Aice Associate]

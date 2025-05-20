@@ -1,7 +1,6 @@
 --- 
 title: "빅프로젝트 | 과제 심의 단계" 
-date: 2025-02-10 17:30:45 +0900
-achieved: 2025-01-10 18:00:2 +0900
+date: 2025-02-10 18:00:2 +0900
 math: true
 categories: [Bootcamp, KT Aivle School]
 tags: [Bootcamp, KT Aivle School, Big Project]

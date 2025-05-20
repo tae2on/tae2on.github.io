@@ -1,7 +1,6 @@
 ---
 title: "웹 크롤링 | Web Crawling"
-date: 2024-10-01 17:01:45 +0900
-achieved: 2024-09-23 17:30:00 +0900
+date: 2024-09-23 17:30:00 +0900
 math: true
 categories: [Bootcamp, KT Aivle School]
 tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook, Pandas, Web Crawling]

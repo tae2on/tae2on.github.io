@@ -1,7 +1,6 @@
 --- 
 title: "Aice Associate 합격 후기" 
-date: 2025-02-08 17:30:45 +0900
-achieved: 2025-02-08 20:01:45 +0900
+date: 2025-02-08 20:01:45 +0900
 math: true
 categories: [Certification, Aice Associate]
 tags: [Certification, KT Aivle School, python, Jupyter Notebook, Aice Associate]

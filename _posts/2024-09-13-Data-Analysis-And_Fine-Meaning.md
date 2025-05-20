@@ -1,7 +1,6 @@
 ---
 title: "데이터 분석 및 의미 찾기 | Data Analysis And Finding Meaning"
-date: 2024-09-30 19:54:00 +0900
-achieved: 2024-09-13 17:30:00 +0900
+date: 2024-09-13 17:30:00 +0900
 math: true
 categories: [Bootcamp, KT Aivle School]
 tags: [Bootcamp, KT Aivle School, Python, Jupyter Notebook, Pandas, Analysis]

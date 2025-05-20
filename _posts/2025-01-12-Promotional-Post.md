@@ -1,7 +1,6 @@
 --- 
 title: "KT AIVLE SCHOOL 7기 모집" 
-date: 2025-01-21 20:46:45 +0900
-achieved: 2025-01-12 19:48:27 +0900
+date: 2025-01-12 19:48:27 +0900
 math: true
 categories: [Bootcamp, KT Aivle School]
 tags: [Bootcamp, KT Aivle School, Promotional Post]
