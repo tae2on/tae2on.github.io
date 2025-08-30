@@ -3,7 +3,7 @@ title: "AI 기반 자율주행 실내 배송 로봇 시스템"
 date: 2023-07-08 15:16:45 +0900
 math: true
 categories: [Project]
-tags: [Project, Autonomous Driving, Robot]
+tags: [Project, Autonomous Driving, Robot, PID, Motor]
 ---
 ---------- 	
 > 인공지능을 탑재한 자율주행 실내 배송 로봇
