@@ -26,6 +26,10 @@ tags: [Project, Firefighting, Optimization, Data Analysis]
 ![프로세스 플로우차트](https://github.com/tae2on/Optimizing_Firefighting_Resources/raw/main/Image/%ED%94%84%EB%A1%9C%EC%84%B8%EC%84%9C%20%ED%94%8C%EB%A1%9C%EC%9A%B0%EC%B0%A8%ED%8A%B8.png?raw=true)
 
 ## **설계과정**
+### **활용 데이터**
+- 부산광역시 화재 사고 출동 데이터 [소방 빅데이터 플랫폼]
+- 부산광역시 소방인력 배치 데이터 [부산시 소방 재난 본부]
+
 ### **데이터 전처리**
 > 불필요한 컬럼을 제거하고(IQR 기준 이상치 포함), 범주형 데이터를 인코딩하여 수치화했습니다. NaN 값은 평균·최빈값 대체 또는 컬럼 삭제로 처리한 뒤, 정규화를 통해 분석에 적합한 형태로 변환했습니다.
 
