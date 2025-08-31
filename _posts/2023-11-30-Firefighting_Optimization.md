@@ -57,6 +57,7 @@ tags: [Project, Firefighting, Optimization, Data Analysis]
 > 건물 정보, 피해 규모, 수행 시간, 지역 및 환경 요인 등을 묶어 분석한 결과 지역별 요인, 환경 정보, 요일별 항목에서 3개의 군집이 가장 적절하는 결론을 얻었습니다. 
 
 **군집분석(Cluster) vs 주성분분석(PCA) 비교**
+
 | 기법      | 특징                                                                 | 한계                              |
 |-----------|----------------------------------------------------------------------|-----------------------------------|
 | Cluster   | - 유사한 데이터끼리 그룹화<br>- 조절 불가한 특성을 기준으로 사용<br>- Elbow 기법 기반 그룹 수 결정 | - 군집별 데이터 불균형 발생 가능  |
@@ -87,12 +88,13 @@ tags: [Project, Firefighting, Optimization, Data Analysis]
 
 ## **산출물** 
 ### **상관관계**
-![소방_상관관계](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/%EC%86%8C%EB%B0%A9_%EC%83%81%EA%B4%80%EA%B4%80%EA%B3%84.png?raw=true)
+<img src="https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/소방_상관관계.png?raw=true" width="400">
 
 ### **인력 재배치 결과**
-![소방_재배치.png](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/%EC%86%8C%EB%B0%A9_%EA%B2%80%EC%A6%9D%ED%9A%A8%EA%B3%BC2.png?raw=true)
+<img src="https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/소방_검증효과2.png?raw=true" width="400">
+
 ### **소방력 재배치 및 효과 검증 결과**
-![소방_재배치](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/%EC%86%8C%EB%B0%A9_%EA%B2%80%EC%A6%9D%ED%9A%A8%EA%B3%BC.png?raw=true)
+<img src="https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/소방_검증효과.png?raw=true" width="400">
 
 ## **실험 결과**
 상관분석을 통해 소방 인력과 화재 진압 시간, 출동 거리와 출동 소요 시간 등이 높은 연관성을 가지는 것을 기반으로 데이터를 전처리할 수 있었습니다. 전처리된 데이터를 기반으로 유전 알고리즘을 적용하여 인력 재배치를 한 결과, 재산 피해 예측값이 전반적으로 감소하는 효과를 얻을 수 있었고 이를 기반으로 회귀분석으로 직접 시뮬레이션을 돌려 유의미한 결과를 가진다는 것을 검증할 수 있었습니다. 이러한 분석 과정을 통해 최적화의 효과를 확인할 수 있었고, 본 프로젝트는 대회에서도 수상이라는 값진 성과를 얻을 수 있었습니다. 
