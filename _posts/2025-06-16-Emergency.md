@@ -45,6 +45,8 @@ tags: [Project, KoBert, MLP, FastAPI]
 
 또한 학습의 안정성을 높이기 위해 EarlyStopping을 적용하여 불필요한 과적합을 방지하고, ReduceLROnPlateau를 통해 학습이 정체되는 경우 학습률을 자동으로 조정하였습니다. 이를 통해 모델이 실제 현장에 적용 가능한 수준의 예측 성능을 확보할 수 있었습니다.
 
+![모델 구조](https://github.com/tae2on/tae2on.github.io/blob/main/assets/img/%EA%B8%89%EA%B5%AC%EB%8B%B9-%EB%AA%A8%EB%8D%B8%EA%B5%AC%EC%A1%B0.png?raw=true)
+
 > 예측 모델을 통해 측정된 요양 기간은 기업의 인력 운용 계획 수립 및 대체 인력 투입 시점 산정에 활용됩니다. 
 
 ### **대체 인력 매칭**
@@ -62,7 +64,7 @@ tags: [Project, KoBert, MLP, FastAPI]
 이를 위해 FastAPI를 사용하여 모델을 API 형태로 구현하였으며 클라우드 환경에서 배포 가능한 구조로 설계하였습니다. 기업은 채용 공고를 입력하면 예측된 요양 기간과 함께 적합한 구직자 리스트를 받아볼 수 있고 구직자는 자기소개서를 업로드하면 관련성이 높은 채용 공고를 추천받을 수 있습니다.
 
 ## **산출물** 
-<iframe width="560" height="315" src="https://youtu.be/embed/AcvDaBUliBQ" 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/AcvDaBUliBQ" 
 frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## **실험결과**
